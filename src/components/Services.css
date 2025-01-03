@@ -1,0 +1,42 @@
+.services-section {
+    height: 100vh;
+    background-image: url('https://via.placeholder.com/1920x1080'); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.services-section p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.service-item {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .services-section h2 {
+        font-size: 2rem;
+    }
+
+    .services-section p {
+        font-size: 1rem;
+    }
+
+    .service-item {
+        font-size: 0.9rem;
+    }
+}
