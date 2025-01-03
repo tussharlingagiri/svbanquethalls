@@ -14,3 +14,4 @@ const GalleryImage = ({ src, alt }) => (
 );
 
 export default GalleryImage;
+

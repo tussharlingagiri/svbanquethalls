@@ -15,3 +15,4 @@ const Testimonial = ({ text, author }) => (
 );
 
 export default Testimonial;
+
