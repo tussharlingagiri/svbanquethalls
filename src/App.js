@@ -18,6 +18,9 @@ const App = () => (
       <Testimonials />
     </main>
     <Footer />
+    <div className="bottom-bar">
+      <p>Call us now to book your event!</p>
+    </div>
   </>
 );
 
