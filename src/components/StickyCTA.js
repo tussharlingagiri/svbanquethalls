@@ -50,8 +50,8 @@ const ctaButtonStyle = {
   transition: "all 0.3s ease",
 };
 
-// Media queries for mobile responsiveness
-const stylesForMobile = `
+// Media queries for mobile responsiveness using inline media query
+const mediaQuery = `
   @media (max-width: 768px) {
     .sticky-cta {
       bottom: 15px;
@@ -65,5 +65,10 @@ const stylesForMobile = `
     }
   }
 `;
+
+// Inject media query dynamically into the document's head (or you can use styled-components for a cleaner approach)
+const styleElement = document.createElement('style');
+styleElement.innerHTML = mediaQuery;
+document.head.appendChild(styleElement);
 
 export default StickyCTA;
