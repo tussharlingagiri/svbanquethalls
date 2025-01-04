@@ -1,0 +1,27 @@
+/* Common styles for BottomBar */
+.bottom-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #FF01B6; /* Brand color */
+    color: white;
+    font-size: 16px;
+    position: fixed; /* Keep it fixed at the bottom */
+    bottom: 0;
+    width: 100%; /* Full width */
+    z-index: 9998; /* Ensure it's above other content */
+    transition: all 0.3s ease;
+  }
+  
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    .bottom-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      padding: 8px 20px;
+    }
+  }
+  
