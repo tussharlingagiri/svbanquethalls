@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/svbanquethalls/static/css/main.071ce918.css",
-    "main.js": "/svbanquethalls/static/js/main.1a9a0abb.js",
+    "main.css": "/svbanquethalls/static/css/main.e7d04cd1.css",
+    "main.js": "/svbanquethalls/static/js/main.4d8630eb.js",
     "static/js/488.45b89a21.chunk.js": "/svbanquethalls/static/js/488.45b89a21.chunk.js",
     "index.html": "/svbanquethalls/index.html",
-    "main.071ce918.css.map": "/svbanquethalls/static/css/main.071ce918.css.map",
-    "main.1a9a0abb.js.map": "/svbanquethalls/static/js/main.1a9a0abb.js.map",
+    "main.e7d04cd1.css.map": "/svbanquethalls/static/css/main.e7d04cd1.css.map",
+    "main.4d8630eb.js.map": "/svbanquethalls/static/js/main.4d8630eb.js.map",
     "488.45b89a21.chunk.js.map": "/svbanquethalls/static/js/488.45b89a21.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.071ce918.css",
-    "static/js/main.1a9a0abb.js"
+    "static/css/main.e7d04cd1.css",
+    "static/js/main.4d8630eb.js"
   ]
 }
