@@ -14,7 +14,7 @@ const StickyCTA = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // If it's mobile, hide the phone CTA, otherwise show both
+  // Only render StickyCTA once based on screen size (avoid duplicates)
   return (
     <div
       style={{
@@ -27,7 +27,7 @@ const StickyCTA = () => {
         zIndex: 9999,
       }}
     >
-      {/* Conditional rendering for Phone Button on Desktop */}
+      {/* Phone Button - Only for Desktop */}
       {!isMobile && (
         <a
           href="tel:+1234567890" // Replace with actual phone number
@@ -41,7 +41,7 @@ const StickyCTA = () => {
         </a>
       )}
 
-      {/* WhatsApp Button (always visible) */}
+      {/* WhatsApp Button - Always visible */}
       <a
         href="https://wa.me/1234567890" // Replace with WhatsApp number
         style={{
