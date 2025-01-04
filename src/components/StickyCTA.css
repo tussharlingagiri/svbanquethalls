@@ -4,18 +4,17 @@
     bottom: 20px; /* Adjust as needed */
     right: 20px; /* Adjust as needed */
     display: flex;
-    flex-direction: column;
+    gap: 15px; /* Adds spacing between the buttons */
     align-items: center;
     z-index: 9999; /* Ensure they appear above other content */
   }
   
   .sticky-cta a {
-    margin: 5px 0;
-    padding: 10px;
+    padding: 12px;
     border-radius: 50%;
     background-color: #25D366; /* WhatsApp color */
     color: white;
-    font-size: 24px;
+    font-size: 24px; /* Icon size */
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
@@ -37,8 +36,15 @@
   /* Make buttons smaller for mobile */
   @media (max-width: 768px) {
     .sticky-cta a {
-      font-size: 18px;
-      padding: 8px;
+      font-size: 20px; /* Adjust icon size for mobile */
+      padding: 10px; /* Slightly smaller padding for mobile */
+    }
+  
+    /* Adjust the positioning for mobile if needed */
+    .sticky-cta {
+      bottom: 15px;
+      right: 15px;
+      gap: 10px; /* Reduce space between the buttons */
     }
   }
   
