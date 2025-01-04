@@ -9,10 +9,12 @@ const StickyCTA = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    handleResize();
+    handleResize(); // Run it once on mount
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  console.log('Rendering StickyCTA: ', isMobile); // Debug log to track rendering
 
   return (
     <div

@@ -8,7 +8,6 @@ import About from "./components/About";
 import TopBar from "./components/TopBar";
 import BottomBar from "./components/BottomBar";  // Import the BottomBar component
 import StickyCTA from "./components/StickyCTA"; // Import the StickyCTA component
-// import StickyTest from "./components/StickyTest"; // Import StickyTest
 
 const App = () => (
   <>
@@ -23,7 +22,7 @@ const App = () => (
     <Footer />
     <BottomBar />  {/* Add the BottomBar here */}
     <StickyCTA />  {/* Add the StickyCTA here */}
-    {/* <StickyTest /> */}
+  
   </>
 );
 
