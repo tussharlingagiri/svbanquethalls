@@ -1,59 +1,47 @@
-/* Common styles for StickyCTA */
 .sticky-cta {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  gap: 15px; /* Adds spacing between the buttons */
-  z-index: 9999;
-  flex-direction: row; /* Default horizontal layout */
+  bottom: 20px; /* Keep the buttons above the bottom edge */
+  right: 20px; /* Keep the buttons on the right */
+  display: flex; /* Arrange buttons side by side */
+  gap: 15px; /* Ensure spacing between buttons */
+  z-index: 9999; /* Ensure buttons stay on top of other content */
+  align-items: center; /* Align buttons centrally */
 }
 
 .sticky-cta a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
+  padding: 12px;
   border-radius: 50%;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-  color: white;
-  transition: all 0.3s ease;
-}
-
-.sticky-cta .whatsapp-button {
   background-color: #25D366; /* WhatsApp color */
+  color: white;
+  font-size: 24px; /* Icon size */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+  text-decoration: none;
 }
 
-.sticky-cta .phone-button {
-  background-color: #34b7f1; /* Phone color */
+.sticky-cta a.phone {
+  background-color: #34b7f1; /* Phone button color */
 }
 
-.sticky-cta .whatsapp-button:hover {
+.sticky-cta a:hover {
   background-color: #128C7E; /* Hover effect for WhatsApp */
 }
 
-.sticky-cta .phone-button:hover {
+.sticky-cta a.phone:hover {
   background-color: #007bff; /* Hover effect for Phone */
 }
 
-/* Mobile Adjustments */
+/* Adjust button size for mobile screens */
 @media (max-width: 768px) {
   .sticky-cta a {
-    font-size: 20px; /* Adjust icon size for mobile */
-    padding: 10px; /* Slightly smaller padding for mobile */
+    font-size: 20px; /* Smaller icon size */
+    padding: 10px; /* Adjust padding */
   }
 
-  /* Hide the phone button on mobile */
-  .sticky-cta .phone-button {
-    display: none;
-  }
-
-  /* Adjust layout for mobile */
   .sticky-cta {
-    bottom: 15px;
-    right: 15px;
-    gap: 10px;
+    bottom: 10px; /* Bring it up slightly for mobile */
+    right: 10px; /* Adjust the right position */
+    gap: 10px; /* Smaller gap */
   }
 }
