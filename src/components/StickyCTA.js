@@ -18,11 +18,11 @@ const StickyCTA = () => {
     <div
       style={{
         position: "fixed",
-        bottom: "20px",
+        bottom: isMobile ? "15px" : "20px", // Adjust bottom positioning based on screen size
         right: "20px",
-        display: "flex", // Ensure horizontal alignment
-        flexDirection: "row", // Align buttons horizontally
-        gap: "15px", // Adds a gap between buttons
+        display: "flex",
+        flexDirection: isMobile ? "column" : "row", // Stack vertically for mobile, horizontal for desktop
+        gap: isMobile ? "10px" : "15px", // Adjust spacing
         zIndex: 9999,
       }}
     >
@@ -40,6 +40,20 @@ const StickyCTA = () => {
 
       {/* Phone Button - Only for Desktop */}
       {!isMobile && (
+        <a
+          href="tel:+1234567890" // Replace with actual phone number
+          style={{
+            ...ctaButtonStyle,
+            backgroundColor: "#34b7f1", // Phone color
+          }}
+          aria-label="Call us"
+        >
+          <FaPhoneAlt size={30} color="white" />
+        </a>
+      )}
+
+      {/* Phone Button - For Mobile */}
+      {isMobile && (
         <a
           href="tel:+1234567890" // Replace with actual phone number
           style={{
