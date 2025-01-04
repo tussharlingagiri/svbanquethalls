@@ -6,6 +6,9 @@
     background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     height: 60px; /* Fixed height */
+    position: sticky; /* Make the top bar sticky */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure it stays above other elements */
   }
   
   .logo img {
