@@ -4,12 +4,14 @@ import Footer from "./components/Footer";
 import HeroVideo from "./components/HeroVideo"; // Updated import
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
+import About from "./components/About";
 
 const App = () => (
   <>
     <Header />
     <main id="main-content">
       <HeroVideo /> {/* Replaced HeroSection with HeroVideo */}
+      <About /> 
       <Services />
       <Testimonials />
     </main>
