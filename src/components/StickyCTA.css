@@ -3,10 +3,10 @@
     position: fixed;
     bottom: 20px; /* Adjust as needed */
     right: 20px; /* Adjust as needed */
-    display: flex;
+    display: flex; /* Ensures horizontal alignment */
     gap: 15px; /* Adds spacing between the buttons */
-    align-items: center;
     z-index: 9999; /* Ensure they appear above other content */
+    flex-direction: row; /* Align buttons horizontally by default */
   }
   
   .sticky-cta a {
@@ -45,6 +45,11 @@
       bottom: 15px;
       right: 15px;
       gap: 10px; /* Reduce space between the buttons */
+    }
+  
+    /* Only show the WhatsApp button for mobile */
+    .sticky-cta a.phone {
+      display: none; /* Hide phone button on mobile */
     }
   }
   

@@ -16,15 +16,7 @@ const StickyCTA = () => {
 
   return (
     <div
-      style={{
-        position: "fixed",
-        bottom: "20px",
-        right: "20px",
-        display: "flex", // Ensure horizontal alignment
-        flexDirection: "row", // Align buttons horizontally
-        gap: "15px", // Adds a gap between buttons
-        zIndex: 9999,
-      }}
+      className="sticky-cta" // Applying a CSS class for styles
     >
       {/* WhatsApp Button */}
       <a
