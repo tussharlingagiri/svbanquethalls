@@ -1,0 +1,48 @@
+/* Sticky CTA buttons styles */
+.sticky-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999; /* Ensures that it's above other content */
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: #25d366; /* WhatsApp Green */
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button i {
+    font-size: 24px; /* Icon size */
+  }
+  
+  /* Phone icon styles */
+  .cta-button:first-child {
+    background-color: #4CAF50; /* Phone Green */
+  }
+  
+  /* Hover effect */
+  .cta-button:hover {
+    background-color: #128C7E; /* WhatsApp Darker Green on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Add icons to the CTA buttons */
+  .cta-button {
+    text-decoration: none;
+  }
+  
+  /* Responsive design (Optional) */
+  @media (max-width: 768px) {
+    .cta-button {
+      font-size: 18px;
+      padding: 8px;
+    }
+  }
+  

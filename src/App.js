@@ -7,6 +7,7 @@ import Testimonials from "./components/Testimonials";
 import About from "./components/About";
 import TopBar from "./components/TopBar";
 import BottomBar from "./components/BottomBar";  // Import the BottomBar component
+import StickyCTA from "./components/StickyCTA"; // Import the StickyCTA component
 
 const App = () => (
   <>
@@ -20,6 +21,7 @@ const App = () => (
     </main>
     <Footer />
     <BottomBar />  {/* Add the BottomBar here */}
+    <StickyCTA />  {/* Add the StickyCTA here */}
   </>
 );
 
