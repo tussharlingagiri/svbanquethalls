@@ -1,28 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa"; // Importing icons
 
 const StickyCTA = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Hook to track screen size and determine if it's mobile
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Set mobile size
-    };
-    handleResize(); // Run it once on mount
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <div
       style={{
         position: "fixed",
-        bottom: isMobile ? "15px" : "20px", // Adjust bottom positioning based on screen size
+        bottom: "20px", // Position from bottom for desktop
         right: "20px",
         display: "flex",
-        flexDirection: isMobile ? "column" : "row", // Stack vertically for mobile, horizontal for desktop
-        gap: isMobile ? "10px" : "15px", // Adjust spacing
+        flexDirection: "row", // Align buttons horizontally
+        gap: "15px", // Adds space between buttons
         zIndex: 9999,
       }}
     >
@@ -38,33 +26,17 @@ const StickyCTA = () => {
         <FaWhatsapp size={30} color="white" />
       </a>
 
-      {/* Phone Button - Only for Desktop */}
-      {!isMobile && (
-        <a
-          href="tel:+1234567890" // Replace with actual phone number
-          style={{
-            ...ctaButtonStyle,
-            backgroundColor: "#34b7f1", // Phone color
-          }}
-          aria-label="Call us"
-        >
-          <FaPhoneAlt size={30} color="white" />
-        </a>
-      )}
-
-      {/* Phone Button - For Mobile */}
-      {isMobile && (
-        <a
-          href="tel:+1234567890" // Replace with actual phone number
-          style={{
-            ...ctaButtonStyle,
-            backgroundColor: "#34b7f1", // Phone color
-          }}
-          aria-label="Call us"
-        >
-          <FaPhoneAlt size={30} color="white" />
-        </a>
-      )}
+      {/* Phone Button */}
+      <a
+        href="tel:+1234567890" // Replace with actual phone number
+        style={{
+          ...ctaButtonStyle,
+          backgroundColor: "#34b7f1", // Phone color
+        }}
+        aria-label="Call us"
+      >
+        <FaPhoneAlt size={30} color="white" />
+      </a>
     </div>
   );
 };
