@@ -14,7 +14,6 @@ const StickyCTA = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Only render StickyCTA once based on screen size (avoid duplicates)
   return (
     <div
       style={{
@@ -27,6 +26,18 @@ const StickyCTA = () => {
         zIndex: 9999,
       }}
     >
+      {/* Only Render One Set of CTA Buttons */}
+      <a
+        href="https://wa.me/1234567890" // Replace with WhatsApp number
+        style={{
+          ...ctaButtonStyle,
+          backgroundColor: "#25D366", // WhatsApp color
+        }}
+        aria-label="WhatsApp us"
+      >
+        <FaWhatsapp size={30} color="white" />
+      </a>
+
       {/* Phone Button - Only for Desktop */}
       {!isMobile && (
         <a
@@ -40,18 +51,6 @@ const StickyCTA = () => {
           <FaPhoneAlt size={30} color="white" />
         </a>
       )}
-
-      {/* WhatsApp Button - Always visible */}
-      <a
-        href="https://wa.me/1234567890" // Replace with WhatsApp number
-        style={{
-          ...ctaButtonStyle,
-          backgroundColor: "#25D366", // WhatsApp color
-        }}
-        aria-label="WhatsApp us"
-      >
-        <FaWhatsapp size={30} color="white" />
-      </a>
     </div>
   );
 };
