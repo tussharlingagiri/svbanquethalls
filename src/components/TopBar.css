@@ -57,9 +57,12 @@
       bottom: 0;
       top: auto;
       left: 0;
-      justify-content: center;
+      right: 0; /* Ensure it stretches across the entire screen */
+      justify-content: space-between; /* Align items horizontally */
       height: 60px; /* Adjust height for mobile */
       padding: 10px 20px;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Add shadow to top of bottom bar */
+      z-index: 1000; /* Make sure it stays above other content */
     }
   
     .nav-menu {
@@ -68,6 +71,7 @@
   
     .cta-button .button {
       padding: 8px 16px;
+      font-size: 14px; /* Smaller font size for mobile */
     }
   }
   
