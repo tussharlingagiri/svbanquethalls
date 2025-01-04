@@ -6,9 +6,9 @@ const StickyCTA = () => {
     <div
       style={{
         position: "fixed",
-        top: "50%", // Center vertically on the screen
+        bottom: "80px", // 80px from the bottom for mobile-friendly position
         right: "20px", // Place on the right side of the screen
-        transform: "translateY(-50%)", // Adjust to center perfectly
+        transform: "translateY(0)", // Maintain no vertical shift
         display: "flex",
         flexDirection: "column", // Align buttons vertically for mobile
         gap: "15px", // Adds space between buttons
