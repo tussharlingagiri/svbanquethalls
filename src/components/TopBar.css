@@ -1,81 +1,80 @@
 /* Desktop version (top bar sticks to the top) */
 .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 60px; /* Fixed height */
+}
+
+/* Mobile version (top bar scrolls with the page, and hides while scrolling down) */
+@media (max-width: 768px) {
+  .top-bar {
+    position: absolute;
+    top: 0; /* Keeps the bar at the top but it scrolls with the page */
     width: 100%;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
     height: 60px; /* Fixed height */
   }
-  
-  /* Mobile version (top bar scrolls with the page, and hides while scrolling down) */
-  @media (max-width: 768px) {
-    .top-bar {
-      position: absolute;
-      top: 0; /* Keeps the bar at the top but it scrolls with the page */
-      width: 100%;
-      background-color: #ffffff;
-      padding: 10px 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      height: 60px; /* Fixed height */
-    }
-  
-    /* When scrolling, hide top bar */
-    .top-bar.hidden {
-      top: -60px; /* Hides the top bar when scrolling down */
-    }
+
+  /* When scrolling, hide top bar */
+  .top-bar.hidden {
+    top: -60px; /* Hides the top bar when scrolling down */
   }
-  
-  /* General Styling */
-  .logo img {
-    max-height: 40px;
-    object-fit: contain;
-  }
-  
+}
+
+/* General Styling */
+.logo img {
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #FF01B6; /* Brand color */
+}
+
+.cta-button .button {
+  background-color: #FF01B6;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cta-button .button:hover {
+  background-color: #e600a6;
+}
+
+@media (max-width: 768px) {
   .nav-menu {
-    display: flex;
-    gap: 20px;
+    display: none;
   }
-  
-  .nav-menu a {
-    text-decoration: none;
-    font-size: 16px;
-    color: #333;
-    transition: color 0.3s;
-  }
-  
-  .nav-menu a:hover {
-    color: #FF01B6; /* Brand color */
-  }
-  
+
   .cta-button .button {
-    background-color: #FF01B6;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    padding: 8px 16px;
+    font-size: 14px;
   }
-  
-  .cta-button .button:hover {
-    background-color: #e600a6;
-  }
-  
-  @media (max-width: 768px) {
-    .nav-menu {
-      display: none;
-    }
-  
-    .cta-button .button {
-      padding: 8px 16px;
-      font-size: 14px;
-    }
-  }
-  
+}
