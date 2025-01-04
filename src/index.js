@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { HashRouter } from 'react-router-dom';  // Import HashRouter
+import { BrowserRouter } from 'react-router-dom';  // Use BrowserRouter
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* Wrap App in HashRouter with basename */}
-    <HashRouter basename={process.env.PUBLIC_URL}> 
+    {/* Use BrowserRouter with basename set to PUBLIC_URL */}
+    <BrowserRouter basename={process.env.PUBLIC_URL}> 
       <App />
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
