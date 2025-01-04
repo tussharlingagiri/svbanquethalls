@@ -6,7 +6,7 @@ const HeroVideo = () => {
     <div className="hero-video-container">
       <video
         className="hero-video"
-        src="src/assets/video01.mp4"
+        src={`${process.env.PUBLIC_URL}/video01.mp4`} // Update this path
         autoPlay
         muted
         loop
