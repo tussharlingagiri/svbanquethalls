@@ -5,10 +5,12 @@
     padding: 10px 20px;
     background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 60px; /* Fixed height */
   }
   
   .logo img {
-    max-height: 50px;
+    max-height: 40px; /* Adjust the logo size */
+    object-fit: contain; /* Ensure the logo maintains its aspect ratio */
   }
   
   .nav-menu {
@@ -41,34 +43,14 @@
     background-color: #e600a6;
   }
   
-  /* Adjustments for mobile view */
+  /* Responsive Design */
   @media (max-width: 768px) {
-    .top-bar {
-      flex-direction: column; /* Stack items vertically */
-      align-items: flex-start; /* Align items to the left */
-      padding: 15px 10px;
-    }
-  
     .nav-menu {
-      display: flex;
-      flex-direction: column; /* Stack the navigation links vertically */
-      gap: 10px;
-      width: 100%;
-    }
-  
-    .nav-menu a {
-      font-size: 18px;
-      text-align: left;
-    }
-  
-    .cta-button {
-      width: 100%;
-      text-align: left;
+      display: none;
     }
   
     .cta-button .button {
-      width: 100%; /* Make the button take full width */
-      padding: 12px 20px; /* Adjust padding */
+      padding: 8px 16px;
     }
   }
   
