@@ -1,18 +1,74 @@
 .top-bar {
-    position: sticky; /* Makes the top bar sticky */
-    top: 0; /* Sticks to the top of the viewport */
-    z-index: 1000; /* Ensures it stays above other content */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #ffffff; /* White background */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  /* Add additional CSS for the sticky behavior */
-  body {
-    margin: 0; /* Ensures no unintended gaps around the viewport */
-    padding: 0; /* Resets default padding */
+  .logo img {
+    max-height: 50px;
+  }
+  
+  .nav-menu {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-menu a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  .nav-menu a:hover {
+    color: #FF01B6;
+  }
+  
+  .cta-button .button {
+    background-color: #FF01B6;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-button .button:hover {
+    background-color: #e600a6;
+  }
+  
+  /* Adjustments for mobile view */
+  @media (max-width: 768px) {
+    .top-bar {
+      flex-direction: column; /* Stack items vertically */
+      align-items: flex-start; /* Align items to the left */
+      padding: 15px 10px;
+    }
+  
+    .nav-menu {
+      display: flex;
+      flex-direction: column; /* Stack the navigation links vertically */
+      gap: 10px;
+      width: 100%;
+    }
+  
+    .nav-menu a {
+      font-size: 18px;
+      text-align: left;
+    }
+  
+    .cta-button {
+      width: 100%;
+      text-align: left;
+    }
+  
+    .cta-button .button {
+      width: 100%; /* Make the button take full width */
+      padding: 12px 20px; /* Adjust padding */
+    }
   }
   
