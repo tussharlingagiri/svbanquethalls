@@ -10,7 +10,6 @@ const App = () => (
     <Header />
     <main id="main-content">
       <HeroVideo /> {/* Replaced HeroSection with HeroVideo */}
-      <About />
       <Services />
       <Testimonials />
     </main>
