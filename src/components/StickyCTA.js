@@ -1,13 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa"; // Importing icons
 
 const StickyCTA = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Hook to track screen size and determine if it's mobile
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div style={stickyContainerStyle}>
+    <div
+      style={{
+        position: "fixed",
+        bottom: isMobile ? "15px" : "20px", // Adjust based on mobile or desktop
+        right: isMobile ? "15px" : "20px", // Adjust based on mobile or desktop
+        display: "flex", // Ensure horizontal alignment
+        flexDirection: isMobile ? "column" : "row", // Stack vertically on mobile
+        gap: isMobile ? "10px" : "15px", // Adjust spacing for mobile
+        zIndex: 9999,
+      }}
+    >
       {/* Phone Button */}
       <a
         href="tel:+1234567890" // Replace with actual phone number
-        style={{ ...ctaButtonStyle, backgroundColor: "#34b7f1" }} // Phone color
+        style={{
+          ...ctaButtonStyle,
+          backgroundColor: "#34b7f1", // Phone color
+        }}
         aria-label="Call us"
       >
         <FaPhoneAlt size={30} color="white" />
@@ -16,24 +41,16 @@ const StickyCTA = () => {
       {/* WhatsApp Button */}
       <a
         href="https://wa.me/1234567890" // Replace with WhatsApp number
-        style={{ ...ctaButtonStyle, backgroundColor: "#25D366" }} // WhatsApp color
+        style={{
+          ...ctaButtonStyle,
+          backgroundColor: "#25D366", // WhatsApp color
+        }}
         aria-label="WhatsApp us"
       >
         <FaWhatsapp size={30} color="white" />
       </a>
     </div>
   );
-};
-
-// Container for sticky buttons
-const stickyContainerStyle = {
-  position: "fixed",
-  bottom: "20px", 
-  right: "20px",
-  display: "flex", // Ensure horizontal alignment
-  flexDirection: "row", // Align buttons horizontally
-  gap: "15px", // Adds a gap between buttons
-  zIndex: 9999,
 };
 
 // Shared style for buttons
@@ -49,26 +66,5 @@ const ctaButtonStyle = {
   color: "white",
   transition: "all 0.3s ease",
 };
-
-// Media queries for mobile responsiveness using inline media query
-const mediaQuery = `
-  @media (max-width: 768px) {
-    .sticky-cta {
-      bottom: 15px;
-      right: 15px;
-      gap: 10px;
-    }
-
-    .sticky-cta a {
-      font-size: 20px;  // Adjust icon size for mobile
-      padding: 10px;  // Adjust padding for mobile
-    }
-  }
-`;
-
-// Inject media query dynamically into the document's head (or you can use styled-components for a cleaner approach)
-const styleElement = document.createElement('style');
-styleElement.innerHTML = mediaQuery;
-document.head.appendChild(styleElement);
 
 export default StickyCTA;
