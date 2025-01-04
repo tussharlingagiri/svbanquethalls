@@ -6,7 +6,8 @@ const TopBar = () => {
     <div className="top-bar">
       <div className="logo">
         <a href="/">
-          <img src="/logo.png" alt="SV Banquet Halls" />
+        <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="SV Banquet Halls" />
+
         </a>
       </div>
       <nav className="nav-menu">
