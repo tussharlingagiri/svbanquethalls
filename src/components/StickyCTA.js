@@ -7,15 +7,14 @@ const StickyCTA = () => {
   // Hook to track screen size and determine if it's mobile
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 768); // Set mobile size
     };
     handleResize(); // Run it once on mount
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  console.log('Rendering StickyCTA: ', isMobile); // Debug log to track rendering
-
+  // If it's mobile, hide the phone CTA, otherwise show both
   return (
     <div
       style={{
@@ -28,7 +27,7 @@ const StickyCTA = () => {
         zIndex: 9999,
       }}
     >
-      {/* Phone Button - Only render if it's not mobile */}
+      {/* Conditional rendering for Phone Button on Desktop */}
       {!isMobile && (
         <a
           href="tel:+1234567890" // Replace with actual phone number
@@ -42,7 +41,7 @@ const StickyCTA = () => {
         </a>
       )}
 
-      {/* WhatsApp Button */}
+      {/* WhatsApp Button (always visible) */}
       <a
         href="https://wa.me/1234567890" // Replace with WhatsApp number
         style={{
