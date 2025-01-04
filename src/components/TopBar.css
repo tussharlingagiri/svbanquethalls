@@ -12,8 +12,10 @@
   }
   
   .logo img {
-    max-height: 50px; /* Fixed logo height */
-    object-fit: contain; /* Prevent stretching */
+    max-height: 50px; /* Ensure the logo does not exceed 50px height */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensures the image fits without stretching */
+    object-position: center; /* Keep the image centered if it's smaller than the container */
   }
   .top-bar {
     padding: 0 20px; /* Adjusted padding */
