@@ -1,54 +1,59 @@
 /* Common styles for StickyCTA */
 .sticky-cta {
   position: fixed;
-  bottom: 20px; /* Adjust as needed */
-  right: 20px; /* Adjust as needed */
-  display: flex; /* Ensures horizontal alignment */
+  bottom: 20px;
+  right: 20px;
+  display: flex;
   gap: 15px; /* Adds spacing between the buttons */
-  z-index: 9999; /* Ensure they appear above other content */
-  flex-direction: row; /* Align buttons horizontally by default */
+  z-index: 9999;
+  flex-direction: row; /* Default horizontal layout */
 }
 
 .sticky-cta a {
-  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background-color: #25D366; /* WhatsApp color */
-  color: white;
-  font-size: 24px; /* Icon size */
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
 }
 
-.sticky-cta a.phone {
-  background-color: #34b7f1; /* Phone button color */
+.sticky-cta .whatsapp-button {
+  background-color: #25D366; /* WhatsApp color */
 }
 
-.sticky-cta a:hover {
+.sticky-cta .phone-button {
+  background-color: #34b7f1; /* Phone color */
+}
+
+.sticky-cta .whatsapp-button:hover {
   background-color: #128C7E; /* Hover effect for WhatsApp */
 }
 
-.sticky-cta a.phone:hover {
+.sticky-cta .phone-button:hover {
   background-color: #007bff; /* Hover effect for Phone */
 }
 
-/* Make buttons smaller for mobile */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
   .sticky-cta a {
     font-size: 20px; /* Adjust icon size for mobile */
     padding: 10px; /* Slightly smaller padding for mobile */
   }
 
-  /* Adjust the positioning for mobile if needed */
+  /* Hide the phone button on mobile */
+  .sticky-cta .phone-button {
+    display: none;
+  }
+
+  /* Adjust layout for mobile */
   .sticky-cta {
     bottom: 15px;
     right: 15px;
-    gap: 10px; /* Reduce space between the buttons */
-  }
-
-  /* Only show the WhatsApp button for mobile */
-  .sticky-cta a.phone {
-    display: none; /* Hide phone button on mobile */
+    gap: 10px;
   }
 }
