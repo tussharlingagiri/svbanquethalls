@@ -53,7 +53,7 @@
   
   /* Mobile-specific sticky bottom bar */
   @media (max-width: 768px) {
-    /* Set top bar to fixed on bottom for mobile */
+    /* Make the bottom bar fixed and visible */
     .top-bar {
       position: fixed;
       bottom: 0;
@@ -66,6 +66,7 @@
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Add shadow to top of the bar */
       z-index: 1000;
       height: 60px;  /* Fixed height to prevent shaking */
+      width: 100%;
     }
   
     /* Hide the desktop menu on mobile */
