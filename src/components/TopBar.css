@@ -11,6 +11,14 @@
     z-index: 9999; /* Ensure it's on top */
   }
   
+  .logo img {
+    max-height: 50px; /* Fixed logo height */
+    object-fit: contain; /* Prevent stretching */
+  }
+  .top-bar {
+    padding: 0 20px; /* Adjusted padding */
+  }
+    
   /* Sticky behavior on desktop */
   @media (min-width: 768px) {
     .top-bar {
