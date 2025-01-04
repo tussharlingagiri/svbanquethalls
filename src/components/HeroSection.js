@@ -1,16 +1,20 @@
-// src/components/HeroSection.js
 import React from "react";
 import "./HeroSection.css";
 
-const HeroSection = () => (
-  <section className="hero">
-    <div className="hero-content">
-      <h1>Welcome to SV Banquet Halls</h1>
-      <p>Perfect venues for your special occasions.</p>
-      <a href="#contact" className="cta-button">Book Now</a>
-    </div>
-  </section>
-);
+const HeroSection = () => {
+  return (
+    <section className="hero-section">
+      <video autoPlay muted loop className="background-video">
+        <source src="/path-to-your-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="hero-content">
+        <h1>Welcome to SV Banquet Halls</h1>
+        <p>Where Elegance Meets Perfection</p>
+        <button className="cta-button">Explore More</button>
+      </div>
+    </section>
+  );
+};
 
 export default HeroSection;
-
