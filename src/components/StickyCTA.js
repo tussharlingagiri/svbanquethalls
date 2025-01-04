@@ -20,25 +20,27 @@ const StickyCTA = () => {
     <div
       style={{
         position: "fixed",
-        bottom: isMobile ? "15px" : "20px", // Adjust based on mobile or desktop
-        right: isMobile ? "15px" : "20px", // Adjust based on mobile or desktop
+        bottom: "20px",
+        right: "20px",
         display: "flex", // Ensure horizontal alignment
-        flexDirection: isMobile ? "column" : "row", // Stack vertically on mobile
-        gap: isMobile ? "10px" : "15px", // Adjust spacing for mobile
+        flexDirection: "row", // Align buttons horizontally
+        gap: "15px", // Adds a gap between buttons
         zIndex: 9999,
       }}
     >
-      {/* Phone Button */}
-      <a
-        href="tel:+1234567890" // Replace with actual phone number
-        style={{
-          ...ctaButtonStyle,
-          backgroundColor: "#34b7f1", // Phone color
-        }}
-        aria-label="Call us"
-      >
-        <FaPhoneAlt size={30} color="white" />
-      </a>
+      {/* Phone Button - Only render if it's not mobile */}
+      {!isMobile && (
+        <a
+          href="tel:+1234567890" // Replace with actual phone number
+          style={{
+            ...ctaButtonStyle,
+            backgroundColor: "#34b7f1", // Phone color
+          }}
+          aria-label="Call us"
+        >
+          <FaPhoneAlt size={30} color="white" />
+        </a>
+      )}
 
       {/* WhatsApp Button */}
       <a
