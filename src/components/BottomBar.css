@@ -28,6 +28,6 @@
 /* Hide the Bottom Bar on Desktop */
 @media (min-width: 769px) {
   .bottom-bar {
-    display: none; /* Hide the bottom bar on desktop */
+    display: none !important; /* Ensure the bottom bar is hidden on desktop */
   }
 }
