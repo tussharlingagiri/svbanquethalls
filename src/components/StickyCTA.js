@@ -26,7 +26,7 @@ const StickyCTA = () => {
         zIndex: 9999,
       }}
     >
-      {/* Only Render One Set of CTA Buttons */}
+      {/* WhatsApp Button */}
       <a
         href="https://wa.me/1234567890" // Replace with WhatsApp number
         style={{
