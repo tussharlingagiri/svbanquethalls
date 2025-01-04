@@ -5,9 +5,11 @@ import HeroVideo from "./components/HeroVideo"; // Updated import
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
 import About from "./components/About";
+import TopBar from "./components/TopBar";
 
 const App = () => (
   <>
+    <TopBar />
     <Header />
     <main id="main-content">
       <HeroVideo /> {/* Replaced HeroSection with HeroVideo */}
