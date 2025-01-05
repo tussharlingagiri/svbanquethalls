@@ -1,18 +1,17 @@
-/* General Header Styles */
-.header {
+/* Header Container */
+.header-container {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  color: #000;
-  background-color: #ffffff;
-  transition: background-color 0.3s ease, top 0.3s ease;
+  background-color: transparent;
+  transition: height 0.3s ease, background-color 0.3s ease;
+  overflow: hidden; /* Prevent gap during transition */
 }
 
-/* Header when scrolled */
-.header.scrolled {
-  background-color: #FF01B6; /* Pink background on scroll */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Add shadow when scrolled */
+.header-container.scrolled {
+  height: 60px; /* Shrinks to main-header height */
+  background-color: #FF01B6; /* Ensures smooth background transition */
 }
 
 /* Top Bar */
@@ -20,16 +19,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #FF01B6; /* Pink background */
+  height: 50px; /* Height of the top bar */
+  background-color: #FF01B6;
   color: white;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  padding: 0 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease, height 0.3s ease;
 }
 
-.top-bar.hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-100%);
+.header-container.scrolled .top-bar {
+  opacity: 0; /* Gradually fades out */
+  height: 0; /* Shrinks height smoothly */
+  pointer-events: none; /* Disable interactions */
 }
 
 /* Main Header */
@@ -37,44 +38,77 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  background-color: #ffffff; /* White background initially */
-  transition: background-color 0.3s ease, padding 0.3s ease;
+  height: 60px; /* Fixed height for the main header */
+  padding: 0 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  transition: background-color 0.3s ease;
 }
 
-.header.scrolled .main-header {
-  background-color: #FF01B6; /* Pink background after scroll */
-  padding: 10px 20px;
+.header-container.scrolled .main-header {
+  background-color: #FF01B6; /* Matches the top bar color */
+  color: white;
 }
 
-.logo img {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-}
-
+/* Navigation */
 nav ul {
   display: flex;
   gap: 20px;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #000;
   font-size: 16px;
+  transition: color 0.3s ease;
 }
 
-.header.scrolled nav ul li a {
+.header-container.scrolled nav ul li a {
   color: white;
 }
 
+/* Book Now Button */
 .book-now-btn {
   background-color: #FF01B6;
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background-color: #ff66b2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .top-bar {
+    display: none;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #FF01B6;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    color: white;
+    font-size: 18px;
+  }
 }

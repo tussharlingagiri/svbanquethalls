@@ -1,23 +1,23 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const handleScroll = useCallback(() => {
+  const handleScroll = () => {
     setIsScrolled(window.scrollY > 50);
-  }, []);
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]); // Include handleScroll in the dependency array
+  }, []);
 
   return (
-    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
+    <div className={`header-container ${isScrolled ? "scrolled" : ""}`}>
       {/* Top Bar */}
-      <div className={`top-bar ${isScrolled ? "hidden" : ""}`}>
+      <div className="top-bar">
         <div className="contact-info">
           <span>📞 +91 6305 333 751</span>
           <a href="mailto:info@svbanquethalls.com" className="email-link">
@@ -43,7 +43,6 @@ const Header = () => {
           <img src="/logo.png" alt="S V Banquet Halls Logo" />
           <span>S V Banquet Halls</span>
         </a>
-        <button className="hamburger">☰</button>
         <nav>
           <ul>
             <li><Link to="/">Home</Link></li>
@@ -54,7 +53,7 @@ const Header = () => {
         </nav>
         <a href="/book" className="book-now-btn">Book Now</a>
       </div>
-    </header>
+    </div>
   );
 };
 
