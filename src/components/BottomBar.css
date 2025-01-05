@@ -1,73 +1,66 @@
 .bottom-bar {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 20px;
+  justify-content: center; /* Center buttons horizontally */
+  align-items: center; /* Vertically align buttons */
   background-color: #FF01B6; /* Brand color */
   color: white;
-  font-size: 16px;
-  position: fixed; /* Keep it fixed at the bottom */
+  position: fixed;
   bottom: 0;
-  width: 100%; /* Full width */
-  z-index: 9998; /* Ensure it's above other content */
-  transition: all 0.3s ease;
-}
-
-.cta-buttons {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
-  max-width: 600px; /* Limit width for better control on large screens */
+  z-index: 9998;
+  gap: 15px; /* Space between buttons */
+  padding: 10px 15px; /* Padding to adjust the bar height */
+  box-sizing: border-box; /* Make sure padding doesn't affect layout */
 }
 
+/* Style for individual buttons */
 .cta-button {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 10px 15px;
-  border-radius: 30px;
-  background-color: #25D366; /* WhatsApp color */
-  color: white;
-  font-size: 14px; /* Adjusted text size */
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s;
+  justify-content: center;
+  padding: 8px 15px; /* Padding inside buttons for appropriate size */
+  background-color: white; /* White button background */
+  color: #FF01B6; /* Brand color text */
+  font-size: 14px; /* Font size for text inside buttons */
+  border-radius: 25px; /* Rounded corners for a clean button shape */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   text-decoration: none;
-  width: 40%; /* Buttons take up 40% of the width */
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* Ensure the text doesn't wrap */
 }
 
-.cta-button.phone {
-  background-color: #34b7f1; /* Phone button color */
-}
-
-.cta-button span {
-  margin-top: 5px; /* Space between icon and text */
-  font-size: 12px; /* Smaller text size for labels */
-}
-
+/* Button hover effect */
 .cta-button:hover {
-  background-color: #128C7E; /* Hover effect for WhatsApp */
+  background-color: #FF01B6; /* Button turns to brand color on hover */
+  color: white; /* Text turns white on hover */
 }
 
-.cta-button.phone:hover {
-  background-color: #007bff; /* Hover effect for Phone */
-}
-
-/* Adjust button size and layout for mobile */
+/* Adjust button size for mobile screens */
 @media (max-width: 768px) {
-  .cta-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-
   .cta-button {
-    width: 80%; /* Take up more space on mobile */
-    font-size: 16px;
-    padding: 12px 20px;
+      font-size: 12px; /* Slightly bigger font size */
+      padding: 8px 20px; /* Adjusted padding to prevent wrapping */
+      text-align: center;
   }
 
-  .cta-button span {
-    font-size: 14px; /* Larger text size for mobile */
+  .bottom-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px; /* Space between buttons */
+      padding: 6px 15px; /* Adjust padding to reduce height */
+  }
+
+  .bottom-bar .cta-button {
+      width: auto; /* Ensure buttons don't stretch */
+  }
+}
+
+
+
+/* Hide the Bottom Bar on Desktop */
+@media (min-width: 769px) {
+  .bottom-bar {
+    display: none !important; /* Hide the bottom bar on desktop */
   }
 }
