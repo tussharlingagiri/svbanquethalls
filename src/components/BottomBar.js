@@ -1,27 +1,31 @@
 import React from "react";
-import "./BottomBar.css"; // Importing the BottomBar.css
-import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa"; // Importing icons
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import "./BottomBar.css";  // Importing the BottomBar.css
 
 const BottomBar = () => {
   return (
     <div className="bottom-bar">
-      {/* WhatsApp Button */}
-      <a
-        href="https://wa.me/1234567890" // Replace with WhatsApp number
-        className="bottom-bar-button whatsapp"
-        aria-label="WhatsApp us"
-      >
-        <FaWhatsapp />
-      </a>
+      <div className="cta-buttons">
+        {/* Call Button */}
+        <a
+          href="tel:+1234567890" // Replace with actual phone number
+          className="cta-button phone"
+          aria-label="Call us"
+        >
+          <FaPhoneAlt size={30} color="white" />
+          <span>Call Now</span>
+        </a>
 
-      {/* Phone Button */}
-      <a
-        href="tel:+1234567890" // Replace with actual phone number
-        className="bottom-bar-button phone"
-        aria-label="Call us"
-      >
-        <FaPhoneAlt />
-      </a>
+        {/* WhatsApp Button */}
+        <a
+          href="https://wa.me/1234567890" // Replace with WhatsApp number
+          className="cta-button whatsapp"
+          aria-label="WhatsApp us"
+        >
+          <FaWhatsapp size={30} color="white" />
+          <span>WhatsApp Now</span>
+        </a>
+      </div>
     </div>
   );
 };

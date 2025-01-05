@@ -1,9 +1,8 @@
-/* Common styles for BottomBar */
 .bottom-bar {
   display: flex;
-  justify-content: space-around; /* Space buttons and text evenly */
+  justify-content: center;
   align-items: center;
-  padding: 10px 20px;
+  padding: 15px 20px;
   background-color: #FF01B6; /* Brand color */
   color: white;
   font-size: 16px;
@@ -14,57 +13,61 @@
   transition: all 0.3s ease;
 }
 
-/* Button styles */
-.bottom-bar-button {
+.cta-buttons {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px; /* Limit width for better control on large screens */
+}
+
+.cta-button {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: white; /* Button background color */
-  color: #FF01B6; /* Icon color matches brand */
-  font-size: 20px; /* Icon size */
+  padding: 10px 15px;
+  border-radius: 30px;
+  background-color: #25D366; /* WhatsApp color */
+  color: white;
+  font-size: 14px; /* Adjusted text size */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
   text-decoration: none;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  width: 40%; /* Buttons take up 40% of the width */
 }
 
-/* WhatsApp-specific button */
-.bottom-bar-button.whatsapp {
-  background-color: #25D366; /* WhatsApp green */
-  color: white; /* Icon color */
+.cta-button.phone {
+  background-color: #34b7f1; /* Phone button color */
 }
 
-/* Phone-specific button */
-.bottom-bar-button.phone {
-  background-color: #34b7f1; /* Phone blue */
-  color: white; /* Icon color */
+.cta-button span {
+  margin-top: 5px; /* Space between icon and text */
+  font-size: 12px; /* Smaller text size for labels */
 }
 
-/* Hover effects */
-.bottom-bar-button:hover {
-  transform: scale(1.1);
+.cta-button:hover {
+  background-color: #128C7E; /* Hover effect for WhatsApp */
 }
 
-/* Mobile-specific styles */
+.cta-button.phone:hover {
+  background-color: #007bff; /* Hover effect for Phone */
+}
+
+/* Adjust button size and layout for mobile */
 @media (max-width: 768px) {
-  .bottom-bar {
-      justify-content: space-around; /* Ensure buttons are spaced */
-      font-size: 14px;
-      padding: 8px 20px;
+  .cta-buttons {
+    flex-direction: column;
+    gap: 10px;
   }
 
-  .bottom-bar-button {
-      width: 45px; /* Slightly larger for mobile */
-      height: 45px;
-      font-size: 24px;
+  .cta-button {
+    width: 80%; /* Take up more space on mobile */
+    font-size: 16px;
+    padding: 12px 20px;
   }
-}
 
-/* Hide the Bottom Bar on Desktop */
-@media (min-width: 769px) {
-  .bottom-bar {
-      display: none !important; /* Ensure the bottom bar is hidden on desktop */
+  .cta-button span {
+    font-size: 14px; /* Larger text size for mobile */
   }
 }
