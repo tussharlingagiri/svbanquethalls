@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 50);
-  };
+  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [handleScroll]); // Include handleScroll in the dependency array
 
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
-      {/* Top Bar (Visible only on Desktop) */}
+      {/* Top Bar */}
       <div className={`top-bar ${isScrolled ? "hidden" : ""}`}>
         <div className="contact-info">
           <span>📞 +91 6305 333 751</span>
