@@ -5,13 +5,11 @@ import HeroVideo from "./components/HeroVideo";
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
 import About from "./components/About";
-import TopBar from "./components/TopBar";
 import BottomBar from "./components/BottomBar";  // Import the BottomBar component
 import StickyCTA from "./components/StickyCTA"; // Import the StickyCTA component
 
 const App = () => (
   <>
-    <TopBar />
     <Header />
     <main id="main-content">
       <HeroVideo />

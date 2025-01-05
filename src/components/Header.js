@@ -1,24 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const handleScroll = () => {
-    const header = document.querySelector(".header");
-    if (window.scrollY > 50) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
+    setIsScrolled(window.scrollY > 50);
   };
 
-  window.addEventListener("scroll", handleScroll);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="header">
-      <div className="top-bar">
+    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
+      {/* Top Bar (Visible only on Desktop) */}
+      <div className={`top-bar ${isScrolled ? "hidden" : ""}`}>
         <div className="contact-info">
           <span>📞 +91 6305 333 751</span>
           <a href="mailto:info@svbanquethalls.com" className="email-link">
@@ -37,16 +36,16 @@ const Header = () => {
           </a>
         </div>
       </div>
+
+      {/* Main Header */}
       <div className="main-header">
         <a href="/" className="logo">
           <img src="/logo.png" alt="S V Banquet Halls Logo" />
           <span>S V Banquet Halls</span>
         </a>
-        <button className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          ☰
-        </button>
+        <button className="hamburger">☰</button>
         <nav>
-          <ul className={isMenuOpen ? "active" : ""}>
+          <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/services">Services</Link></li>
