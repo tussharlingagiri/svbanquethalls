@@ -1,73 +1,82 @@
-/* Default: Hide the bottom bar on desktop */
+/* Bottom Bar Styles */
 .bottom-bar {
-  display: none;
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  align-items: center; /* Align buttons vertically */
+  height: 50px; /* Match the button height more snugly */
+  padding: 0; /* Ensure no internal padding */
+  margin: 0; /* Remove any accidental margin */
+  background-color: #FF01B6; /* Vibrant pink background */
+  position: fixed;
+  bottom: 0;
+  width: 100%; /* Full width */
+  z-index: 1000; /* Keep above content */
+  gap: 20px; /* Space between buttons */
+  box-sizing: border-box; /* Include padding in dimensions */
 }
 
-/* Mobile view: Show the bottom bar and adjust the layout */
+
+
+
+
+
+/* Button Styles */
+.cta-button {
+  display: flex;
+  align-items: center; /* Align icon and text vertically */
+  justify-content: center; /* Center content horizontally */
+  width: 160px; /* Fixed width for consistency */
+  height: 48px; /* Fixed height to match bottom bar */
+  padding: 0; /* Remove internal padding */
+  margin: 0; /* Remove any accidental margin */
+  background-color: #ffffff; /* White button background */
+  color: #FF01B6; /* Vibrant pink for text and icons */
+  font-size: 16px; /* Text size for readability */
+  font-weight: bold; /* Bold font for emphasis */
+  text-decoration: none; /* Remove underline */
+  border-radius: 10px; /* Smooth rounded corners */
+  line-height: 1; /* Reset line height */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-sizing: border-box; /* Include padding in dimensions */
+}
+
+
+
+
+
+
+/* Icon Alignment */
+.cta-button svg {
+  vertical-align: middle; /* Align icons with text */
+  margin-right: 8px; /* Space between icon and text */
+}
+
+
+/* Button Hover Effect */
+.cta-button:hover {
+  background-color: #FFE6F3; /* Light pink background on hover */
+  color: #FF01B6; /* Keep text vibrant pink */
+  transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  /* Hide footer on mobile */
-  .footer {
-    display: none; /* Hides footer on mobile devices */
-  }
-
-  /* Bottom bar configuration */
   .bottom-bar {
-    display: flex;                          /* Show bottom bar on mobile */
-    justify-content: center;                 /* Center the buttons horizontally */
-    align-items: center;                     /* Center the buttons vertically */
-    padding: 6px 10px;                       /* Padding for top, left, and right */
-    background-color: #FF01B6;               /* Brand color */
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 9998;
-    box-sizing: border-box;
-    height: 60px;                            /* Fixed height for bottom bar */
-    gap: 15px;                               /* Gap between buttons */
+    height: 60px; /* Adjust height for smaller screens */
   }
 
-  /* Button Styling */
   .cta-button {
-    display: flex;
-    justify-content: center;                 /* Center the icon and text inside the button */
-    align-items: center;                     /* Align the icon and text vertically */
-    font-size: 12px;                         /* Adjust font size */
-    padding: 6px 12px;                       /* Adjust padding for smaller buttons */
-    white-space: nowrap;                     /* Prevent text from wrapping */
-    box-sizing: border-box;
-    text-decoration: none;
-    color: white;
-    border-radius: 5px;                      /* Rounded corners for buttons */
-    transition: background-color 0.3s;       /* Smooth transition for hover effect */
-    height: 40px;                            /* Set button height */
-    width: 45%;                              /* Buttons take 45% of the width, leaving space in between */
-    outline: none;                           /* Remove focus outline */
-    border: none;                            /* Remove any border */
-  }
-
-  /* Phone button color */
-  .phone-button {
-    background-color: #34b7f1;
-  }
-
-  /* WhatsApp button color */
-  .whatsapp-button {
-    background-color: #25D366;
-  }
-
-  /* Hover effect for buttons */
-  .cta-button:hover {
-    background-color: #007bff;
-  }
-
-  /* Add margin between icon and text inside buttons */
-  .cta-button span {
-    margin-left: 8px;
-  }
-
-  /* Add padding at the bottom of the bar */
-  .bottom-bar {
-    padding-bottom: 6px; /* Add a small bottom gap */
+    min-width: 140px; /* Compact width for smaller screens */
+    height: 44px; /* Compact height */
+    font-size: 14px; /* Slightly smaller font size */
   }
 }
+
+/* Hide Bottom Bar on Larger Screens */
+@media (min-width: 769px) {
+  .bottom-bar {
+    display: none; /* Hide bar on desktop */
+  }
+}
+
+
