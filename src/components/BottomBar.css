@@ -1,66 +1,73 @@
+/* Default: Hide the bottom bar on desktop */
 .bottom-bar {
-  display: flex;
-  justify-content: center; /* Center buttons horizontally */
-  align-items: center; /* Vertically align buttons */
-  background-color: #FF01B6; /* Brand color */
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 9998;
-  gap: 15px; /* Space between buttons */
-  padding: 10px 15px; /* Padding to adjust the bar height */
-  box-sizing: border-box; /* Make sure padding doesn't affect layout */
+  display: none;
 }
 
-/* Style for individual buttons */
-.cta-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 15px; /* Padding inside buttons for appropriate size */
-  background-color: white; /* White button background */
-  color: #FF01B6; /* Brand color text */
-  font-size: 14px; /* Font size for text inside buttons */
-  border-radius: 25px; /* Rounded corners for a clean button shape */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  white-space: nowrap; /* Ensure the text doesn't wrap */
-}
-
-/* Button hover effect */
-.cta-button:hover {
-  background-color: #FF01B6; /* Button turns to brand color on hover */
-  color: white; /* Text turns white on hover */
-}
-
-/* Adjust button size for mobile screens */
+/* Mobile view: Show the bottom bar and adjust the layout */
 @media (max-width: 768px) {
+  /* Hide footer on mobile */
+  .footer {
+    display: none; /* Hides footer on mobile devices */
+  }
+
+  /* Bottom bar configuration */
+  .bottom-bar {
+    display: flex;                          /* Show bottom bar on mobile */
+    justify-content: center;                 /* Center the buttons horizontally */
+    align-items: center;                     /* Center the buttons vertically */
+    padding: 6px 10px;                       /* Padding for top, left, and right */
+    background-color: #FF01B6;               /* Brand color */
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9998;
+    box-sizing: border-box;
+    height: 60px;                            /* Fixed height for bottom bar */
+    gap: 15px;                               /* Gap between buttons */
+  }
+
+  /* Button Styling */
   .cta-button {
-      font-size: 12px; /* Slightly bigger font size */
-      padding: 8px 20px; /* Adjusted padding to prevent wrapping */
-      text-align: center;
+    display: flex;
+    justify-content: center;                 /* Center the icon and text inside the button */
+    align-items: center;                     /* Align the icon and text vertically */
+    font-size: 12px;                         /* Adjust font size */
+    padding: 6px 12px;                       /* Adjust padding for smaller buttons */
+    white-space: nowrap;                     /* Prevent text from wrapping */
+    box-sizing: border-box;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;                      /* Rounded corners for buttons */
+    transition: background-color 0.3s;       /* Smooth transition for hover effect */
+    height: 40px;                            /* Set button height */
+    width: 45%;                              /* Buttons take 45% of the width, leaving space in between */
+    outline: none;                           /* Remove focus outline */
+    border: none;                            /* Remove any border */
   }
 
+  /* Phone button color */
+  .phone-button {
+    background-color: #34b7f1;
+  }
+
+  /* WhatsApp button color */
+  .whatsapp-button {
+    background-color: #25D366;
+  }
+
+  /* Hover effect for buttons */
+  .cta-button:hover {
+    background-color: #007bff;
+  }
+
+  /* Add margin between icon and text inside buttons */
+  .cta-button span {
+    margin-left: 8px;
+  }
+
+  /* Add padding at the bottom of the bar */
   .bottom-bar {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px; /* Space between buttons */
-      padding: 6px 15px; /* Adjust padding to reduce height */
-  }
-
-  .bottom-bar .cta-button {
-      width: auto; /* Ensure buttons don't stretch */
-  }
-}
-
-
-
-/* Hide the Bottom Bar on Desktop */
-@media (min-width: 769px) {
-  .bottom-bar {
-    display: none !important; /* Hide the bottom bar on desktop */
+    padding-bottom: 6px; /* Add a small bottom gap */
   }
 }

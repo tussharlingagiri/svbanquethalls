@@ -11,7 +11,7 @@ const BottomBar = () => {
         className="cta-button phone-button"
         aria-label="Call us"
       >
-        <FaPhoneAlt size={20} color="white" />
+        <FaPhoneAlt size={20} color="white" /> {/* Icon for Call Now */}
         <span>Call Now</span>
       </a>
 
@@ -21,7 +21,7 @@ const BottomBar = () => {
         className="cta-button whatsapp-button"
         aria-label="WhatsApp us"
       >
-        <FaWhatsapp size={20} color="white" />
+        <FaWhatsapp size={20} color="white" /> {/* Icon for WhatsApp */}
         <span>WhatsApp Now</span>
       </a>
     </div>
