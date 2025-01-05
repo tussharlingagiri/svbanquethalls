@@ -6,7 +6,8 @@
   height: 56px; /* Slightly taller for breathing space */
   padding: 0; /* Remove any internal padding */
   margin: 0; /* Remove any accidental margin */
-  background-color: #FF01B6; /* Vibrant pink background */
+  background: linear-gradient(90deg, #FF01B6, #FF66B2);
+/* Subtle gradient for a premium look */
   position: fixed;
   bottom: 0;
   width: 100%; /* Full width */
@@ -32,7 +33,7 @@
   text-decoration: none; /* Remove underline */
   border-radius: 12px; /* Slightly rounder corners */
   line-height: 1; /* Reset line height */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Enhance shadow for a modern look */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhance shadow for a modern look */
   box-sizing: border-box; /* Include padding in dimensions */
   transition: transform 0.2s ease, background-color 0.3s ease; /* Smooth hover effect */
 }
@@ -41,6 +42,8 @@
 .cta-button svg {
   vertical-align: middle; /* Align icons with text */
   margin-right: 8px; /* Space between icon and text */
+  width: 20px; /* Increase icon size for better visibility */
+  height: 20px; /* Match icon size */
 }
 
 /* Button Hover Effect */
@@ -48,7 +51,7 @@
   background-color: #FFE6F3; /* Light pink background on hover */
   color: #FF01B6; /* Keep text vibrant pink */
   transform: scale(1.07); /* Slightly stronger enlargement on hover */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Add more shadow on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add more shadow on hover */
 }
 
 /* Responsive Adjustments */
@@ -61,6 +64,7 @@
     min-width: 150px; /* Compact width for smaller screens */
     height: 46px; /* Compact height */
     font-size: 14px; /* Slightly smaller font size */
+    border-radius: 10px; /* Slightly reduced corners for compact look */
   }
 }
 
