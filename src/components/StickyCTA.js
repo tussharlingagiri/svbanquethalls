@@ -1,30 +1,33 @@
-import React, { useState, useEffect } from "react";
-import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa"; // Importing icons
+import React, { useEffect, useState } from "react";
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 const StickyCTA = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
-  // Hook to track screen size and determine if it's mobile
+  // Hook to track screen size and determine if it's desktop
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Set mobile size
+      setIsDesktop(window.innerWidth > 768); // Set desktop size
     };
     handleResize(); // Run it once on mount
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Render nothing if not desktop
+  if (!isDesktop) return null;
+
   return (
     <div
       style={{
         position: "fixed",
-        top: "75%", // Vertical positioning closer to center
-        right: "20px", // Right alignment
+        top: "75%", // Vertical positioning near center-right
+        right: "20px", // Align to the right
         transform: "translateY(-50%)", // Center vertically
-        display: "flex", // Flex layout for alignment
-        flexDirection: isMobile ? "row" : "column", // Make buttons horizontal on mobile
-        gap: "15px", // Adds space between buttons
-        zIndex: 9999,
+        display: "flex",
+        flexDirection: "column", // Stack buttons vertically
+        gap: "15px", // Add space between buttons
+        zIndex: 9999, // Ensure above other content
       }}
     >
       {/* WhatsApp Button */}
@@ -39,38 +42,22 @@ const StickyCTA = () => {
         <FaWhatsapp size={30} color="white" />
       </a>
 
-      {/* Phone Button - Only for Desktop */}
-      {!isMobile && (
-        <a
-          href="tel:+1234567890" // Replace with actual phone number
-          style={{
-            ...ctaButtonStyle,
-            backgroundColor: "#34b7f1", // Phone color
-          }}
-          aria-label="Call us"
-        >
-          <FaPhoneAlt size={30} color="white" />
-        </a>
-      )}
-
-      {/* Phone Button - For Mobile */}
-      {isMobile && (
-        <a
-          href="tel:+1234567890" // Replace with actual phone number
-          style={{
-            ...ctaButtonStyle,
-            backgroundColor: "#34b7f1", // Phone color
-          }}
-          aria-label="Call us"
-        >
-          <FaPhoneAlt size={30} color="white" />
-        </a>
-      )}
+      {/* Phone Button */}
+      <a
+        href="tel:+1234567890" // Replace with actual phone number
+        style={{
+          ...ctaButtonStyle,
+          backgroundColor: "#34b7f1", // Phone color
+        }}
+        aria-label="Call us"
+      >
+        <FaPhoneAlt size={30} color="white" />
+      </a>
     </div>
   );
 };
 
-// Shared style for buttons
+// Shared styles for buttons
 const ctaButtonStyle = {
   display: "flex",
   justifyContent: "center",
