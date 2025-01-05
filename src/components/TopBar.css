@@ -1,51 +1,30 @@
-/* Common styles for TopBar */
 .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    height: 70px; /* New fixed height */
-    z-index: 9999; /* Ensure it's on top */
-  }
-  
-  .logo img {
-    max-height: 50px; /* Ensure the logo does not exceed 50px height */
-    width: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Ensures the image fits without stretching */
-    object-position: center; /* Keep the image centered if it's smaller than the container */
-  }
-  .top-bar {
-    padding: 0 20px; /* Adjusted padding */
-  }
-    
-  /* Sticky behavior on desktop */
-  @media (min-width: 768px) {
-    .top-bar {
-      position: fixed; /* Fixes the top bar at the top of the screen */
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%; /* Full width */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for better visibility */
-      background-color: #fff; /* White background */
-      padding: 10px 20px;
-    }
-    
-    /* Ensure content below the top bar doesn’t overlap */
-    body {
-      padding-top: 70px; /* Adjust this to fit your top bar height */
-    }
-  }
-  
-  /* For mobile and smaller screens */
-  @media (max-width: 768px) {
-    .top-bar {
-      position: relative; /* Default position for mobile */
-      background-color: #fff;
-      box-shadow: none;
-    }
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #FF01B6;
+  color: white;
+  font-size: 14px;
+}
+
+.top-bar .contact-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.top-bar .social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.top-bar a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.top-bar a:hover {
+  color: #FFE6F3;
+}
