@@ -15,17 +15,20 @@
 }
 
 /* Top Bar */
+
 .top-bar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 50px; /* Height of the top bar */
-  background-color: #FF01B6;
-  color: white;
-  padding: 0 20px;
-  opacity: 1;
-  transition: opacity 0.3s ease, height 0.3s ease;
+  justify-content: center; /* Center align the content horizontally */
+  align-items: center; /* Align items vertically */
+  height: 50px; /* Keeps the bar height consistent */
+  background-color: #FF01B6; /* Vibrant pink background */
+  color: white; /* White text for readability */
+  padding: 0 20px; /* Adds space on left and right */
+  gap: 40px; /* Adds equal space between sections */
+  opacity: 1; /* Keeps it fully visible */
+  transition: opacity 0.3s ease, height 0.3s ease; /* Smooth transitions for height and visibility */
 }
+
 
 .header-container.scrolled .top-bar {
   opacity: 0; /* Gradually fades out */
@@ -111,4 +114,41 @@ nav ul li a {
     color: white;
     font-size: 18px;
   }
+}
+
+/* Contact Info Styling */
+.contact-info {
+  display: flex;
+  align-items: center; /* Align vertically */
+  gap: 10px; /* Spacing between phone and email */
+}
+
+.contact-info span,
+.contact-info a {
+  font-size: 16px; /* Consistent font size */
+  color: white; /* White text for readability */
+  text-decoration: none; /* No underline */
+}
+
+.contact-info a:hover {
+  text-decoration: underline; /* Adds hover effect */
+}
+
+
+/* Social Icons Styling */
+.social-icons {
+  display: flex;
+  align-items: center; /* Align vertically */
+  gap: 15px; /* Add space between icons */
+}
+
+.social-icons a {
+  color: white; /* Icon color */
+  font-size: 18px; /* Icon size */
+  text-decoration: none; /* No underline */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.social-icons a:hover {
+  color: #FFE6F3; /* Slight hover effect */
 }

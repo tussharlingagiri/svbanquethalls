@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faInstagram, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,19 +22,31 @@ const Header = () => {
       <div className="top-bar">
         <div className="contact-info">
           <span>📞 +91 6305 333 751</span>
-          <a href="mailto:info@svbanquethalls.com" className="email-link">
+          {/* <a href="mailto:info@svbanquethalls.com" className="email-link">
             info@svbanquethalls.com
-          </a>
+          </a> */}
         </div>
         <div className="social-icons">
-          <a href="https://www.facebook.com/svbanquethalls" target="_blank" rel="noopener noreferrer">
-            FB
+          <a
+            href="https://www.facebook.com/svbanquethalls"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faFacebookF} />
           </a>
-          <a href="https://www.instagram.com/svbanquethalls/" target="_blank" rel="noopener noreferrer">
-            IG
+          <a
+            href="https://www.instagram.com/svbanquethalls/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faInstagram} />
           </a>
-          <a href="https://www.linkedin.com/in/svbanquethalls/" target="_blank" rel="noopener noreferrer">
-            IN
+          <a
+            href="https://www.linkedin.com/in/svbanquethalls/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faLinkedinIn} />
           </a>
         </div>
       </div>
