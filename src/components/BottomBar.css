@@ -3,47 +3,39 @@
   display: flex;
   justify-content: center; /* Center buttons horizontally */
   align-items: center; /* Align buttons vertically */
-  height: 50px; /* Match the button height more snugly */
-  padding: 0; /* Ensure no internal padding */
+  height: 56px; /* Slightly taller for breathing space */
+  padding: 0; /* Remove any internal padding */
   margin: 0; /* Remove any accidental margin */
   background-color: #FF01B6; /* Vibrant pink background */
   position: fixed;
   bottom: 0;
   width: 100%; /* Full width */
   z-index: 1000; /* Keep above content */
-  gap: 20px; /* Space between buttons */
+  gap: 24px; /* Slightly increase space between buttons */
   box-sizing: border-box; /* Include padding in dimensions */
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
-
-
-
-
-
 
 /* Button Styles */
 .cta-button {
   display: flex;
   align-items: center; /* Align icon and text vertically */
   justify-content: center; /* Center content horizontally */
-  width: 160px; /* Fixed width for consistency */
-  height: 48px; /* Fixed height to match bottom bar */
-  padding: 0; /* Remove internal padding */
+  width: 170px; /* Slightly wider for text clarity */
+  height: 50px; /* Adjusted height for consistency */
+  padding: 10px 16px; /* Add more padding for breathing room */
   margin: 0; /* Remove any accidental margin */
   background-color: #ffffff; /* White button background */
   color: #FF01B6; /* Vibrant pink for text and icons */
   font-size: 16px; /* Text size for readability */
   font-weight: bold; /* Bold font for emphasis */
   text-decoration: none; /* Remove underline */
-  border-radius: 10px; /* Smooth rounded corners */
+  border-radius: 12px; /* Slightly rounder corners */
   line-height: 1; /* Reset line height */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Enhance shadow for a modern look */
   box-sizing: border-box; /* Include padding in dimensions */
+  transition: transform 0.2s ease, background-color 0.3s ease; /* Smooth hover effect */
 }
-
-
-
-
-
 
 /* Icon Alignment */
 .cta-button svg {
@@ -51,12 +43,12 @@
   margin-right: 8px; /* Space between icon and text */
 }
 
-
 /* Button Hover Effect */
 .cta-button:hover {
   background-color: #FFE6F3; /* Light pink background on hover */
   color: #FF01B6; /* Keep text vibrant pink */
-  transform: scale(1.05); /* Slight enlargement on hover */
+  transform: scale(1.07); /* Slightly stronger enlargement on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Add more shadow on hover */
 }
 
 /* Responsive Adjustments */
@@ -66,8 +58,8 @@
   }
 
   .cta-button {
-    min-width: 140px; /* Compact width for smaller screens */
-    height: 44px; /* Compact height */
+    min-width: 150px; /* Compact width for smaller screens */
+    height: 46px; /* Compact height */
     font-size: 14px; /* Slightly smaller font size */
   }
 }
@@ -78,5 +70,3 @@
     display: none; /* Hide bar on desktop */
   }
 }
-
-
