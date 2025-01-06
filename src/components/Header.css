@@ -37,12 +37,12 @@
   align-items: center;
   height: 60px; /* Fixed height for the main header */
   padding: 0 20px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #eaeaea;
+  background-color: #000000;
+  border-bottom: 1px solid #000000;
   transition: background-color 0.3s ease;
 }
 .header-container.scrolled .main-header {
-  background-color: #FF01B6; /* Matches the top bar color */
+  background-color: #000000; /* Matches the top bar color */
   color: white;
 }
 /* Navigation */
@@ -221,3 +221,20 @@ nav ul li a {
     padding: 0 20px; /* Add padding for a clean layout */
   }
 }
+
+.logo img {
+  width: 150px; /* Desktop size */
+  height: 6.0vh;
+  max-width: 100%; /* Prevents overflowing */
+  object-fit: contain; /* Ensures no distortion */
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .logo img {
+    width: 50px; /* Smaller size for mobile */
+    height: auto;
+  }
+}
+
+

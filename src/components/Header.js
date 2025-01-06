@@ -45,7 +45,10 @@ const Header = () => {
         {/* Main Header */}
         <div className="main-header">
           <a href="/" className="logo">
-            <img src="/logo.png" alt="S V Banquet Halls" />
+          {/* <img src="/logo.png" alt="S V Banquet Halls" /> */}
+          <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="S V Banquet Halls" />
+
+
           </a>
           <button className="hamburger" onClick={toggleMenu}>
             ☰
@@ -74,92 +77,3 @@ const Header = () => {
 export default Header;
 
 
-
-// import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
-// import "./Header.css";
-
-// const Header = () => {
-//   const [isScrolled, setIsScrolled] = useState(false);
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-//   const handleScroll = () => {
-//     setIsScrolled(window.scrollY > 50);
-//   };
-
-//   const toggleMenu = () => {
-//     setIsMenuOpen((prevState) => !prevState); // Use functional update for better state handling
-//   };
-
-//   useEffect(() => {
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <div className={`header-container ${isScrolled ? "scrolled" : ""}`}>
-//       {/* Top Bar */}
-//       <div className="top-bar">
-//         <div className="contact-info">
-//           <span>📞 +91 6305 333 751</span>
-//         </div>
-//         <div className="social-icons">
-//           <a
-//             href="https://www.facebook.com/svbanquethalls"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             <i className="fab fa-facebook"></i>
-//           </a>
-//           <a
-//             href="https://www.instagram.com/svbanquethalls/"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             <i className="fab fa-instagram"></i>
-//           </a>
-//           <a
-//             href="https://www.linkedin.com/in/svbanquethalls/"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             <i className="fab fa-linkedin"></i>
-//           </a>
-//         </div>
-//       </div>
-
-//       {/* Main Header */}
-//       <div className="main-header">
-//         <a href="/" className="logo">
-//           <img src="/logo.png" alt="S V Banquet Halls Logo" />
-//           <span>S V Banquet Halls</span>
-//         </a>
-//         <button
-//           className="hamburger"
-//           onClick={toggleMenu}
-//           aria-label="Toggle navigation menu"
-//         >
-//           ☰
-//         </button>
-//         <nav>
-//           <ul className={isMenuOpen ? "active" : ""}>
-//             <li>
-//               <Link to="/">Home</Link>
-//             </li>
-//             <li>
-//               <Link to="/about">About Us</Link>
-//             </li>
-//             <li>
-//               <Link to="/services">Services</Link>
-//             </li>
-//             <li>
-//               <Link to="/contact">Contact</Link>
-//             </li>
-//           </ul>
-//         </nav>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Header;
