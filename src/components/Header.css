@@ -130,6 +130,7 @@ nav ul li a {
 }
 /* Mobile View */
 /* Hide Hamburger on Desktop */
+
 .hamburger {
   display: none; /* Default to hidden */
 }
@@ -137,6 +138,7 @@ nav ul li a {
   .top-bar {
     display: none; /* Hide the top bar on mobile */
   }
+
   .main-header {
     display: flex;
     justify-content: space-between; /* Space out the logo and hamburger menu */
@@ -150,6 +152,7 @@ nav ul li a {
     width: 50px; /* Ensure logo image size */
     height: auto; /* Maintain aspect ratio */
   }
+ 
   .hamburger {
     display: block; /* Show the hamburger menu button */
     background-color: transparent; /* No background for the button */
@@ -157,7 +160,14 @@ nav ul li a {
     font-size: 28px; /* Slightly larger size for better visibility */
     cursor: pointer; /* Change the cursor to a pointer */
     color: #FF01B6; /* Match the branding color */
+    z-index: 1100; /* Ensure it stays above other elements */
   }
+
+  .header-container.scrolled .hamburger {
+    display: block; /* Ensure hamburger remains visible */
+    color: white; /* Adjust color to match the scrolled header */
+  }
+
   nav ul {
     display: none; /* Hide the navigation links by default */
     flex-direction: column; /* Stack links vertically */
