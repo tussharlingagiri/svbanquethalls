@@ -18,7 +18,7 @@ const Header = () => {
 
   const checkLogoExists = () => {
     const img = new Image();
-    img.src = `${process.env.PUBLIC_URL}/logo.png`;
+    img.src = `${process.env.PUBLIC_URL}/logonew01.png`;
     img.onload = () => setLogoExists(true); // If the image loads, set to true
     img.onerror = () => setLogoExists(false); // If the image fails to load, set to false
   };
