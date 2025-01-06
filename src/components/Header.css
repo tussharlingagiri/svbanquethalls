@@ -145,8 +145,8 @@ nav ul li a {
     align-items: center; /* Align vertically */
     height: 60px; /* Set consistent height */
     padding: 0 20px; /* Increase padding for cleaner layout */
-    background-color: #ffffff; /* Set background color for the main header */
-    border-bottom: 1px solid #eaeaea; /* Add subtle border */
+    background-color: #000000; /* Set background color for the main header */
+    border-bottom: 1px solid #000000; /* Add subtle border */
   }
   .logo img {
     width: 50px; /* Ensure logo image size */
@@ -236,5 +236,6 @@ nav ul li a {
     height: auto;
   }
 }
+
 
 
