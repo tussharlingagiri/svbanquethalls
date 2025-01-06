@@ -45,8 +45,7 @@ const Header = () => {
         {/* Main Header */}
         <div className="main-header">
           <a href="/" className="logo">
-            <img src="/logo.png" alt="S V Banquet Halls Logo" />
-            <span>S V Banquet Halls</span>
+            <img src="/logo.png" alt="S V Banquet Halls" />
           </a>
           <button className="hamburger" onClick={toggleMenu}>
             ☰
@@ -63,11 +62,11 @@ const Header = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="hero-section">
+      {/* <div className="hero-section">
         <h1>Elevate Every Occasion</h1>
         <p>Make your special events unforgettable at SV Banquets!</p>
         <button className="hero-btn">Read More</button>
-      </div>
+      </div> */}
     </>
   );
 };
