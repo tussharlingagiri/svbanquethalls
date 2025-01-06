@@ -10,7 +10,7 @@
 }
 .header-container.scrolled {
   height: 60px; /* Shrinks to main-header height */
-  background-color: #FF01B6; /* Ensures smooth background transition */
+  background-color: black; /* Ensures smooth background transition */
 }
 /* Top Bar */
 .top-bar {
@@ -18,8 +18,8 @@
   justify-content: center; /* Center align the content horizontally */
   align-items: center; /* Align items vertically */
   height: 50px; /* Keeps the bar height consistent */
-  background-color: #B87333; /* Vibrant pink background */
-  color: white; /* White text for readability */
+  background-color: #FFD700; /* Vibrant pink background */
+  color: black; /* White text for readability */
   padding: 0 20px; /* Adds space on left and right */
   gap: 40px; /* Adds equal space between sections */
   opacity: 1; /* Keeps it fully visible */
@@ -35,7 +35,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px; /* Fixed height for the main header */
+  height: 90px; /* Fixed height for the main header */
   padding: 0 20px;
   background-color: #000000;
   border-bottom: 1px solid #000000;
@@ -43,7 +43,7 @@
 }
 .header-container.scrolled .main-header {
   background-color: #000000; /* Matches the top bar color */
-  color: white;
+  color: black;
 }
 /* Navigation */
 nav ul {
@@ -224,7 +224,7 @@ nav ul li a {
 
 .logo img {
   width: 150px; /* Desktop size */
-  height: 6.0vh;
+  height: 10vh;
   max-width: 100%; /* Prevents overflowing */
   object-fit: contain; /* Ensures no distortion */
 }
