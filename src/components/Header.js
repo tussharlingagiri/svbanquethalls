@@ -65,7 +65,7 @@ const Header = () => {
         {/* Main Header - Always visible or after scrolling */}
         <div className={`main-header ${showTopBar ? "" : "main-replace"}`}>
           <a href="/" className="logo">
-            <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="S V Banquet Halls" />
+            <img src={`${process.env.PUBLIC_URL}/newlogo07.png`} alt="S V Banquet Halls" />
           </a>
           <button className="hamburger" onClick={toggleMenu}>
             ☰
