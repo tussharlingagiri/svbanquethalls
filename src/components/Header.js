@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa"; // For social icons
+import { FaPhone, FaMapMarkerAlt } from "react-icons/fa"; // For phone and map icons
 import "./Header.css";
 
 const Header = () => {
@@ -80,6 +81,16 @@ const Header = () => {
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </nav>
+
+          {/* CTA Buttons */}
+          <div className="cta-buttons">
+            <a href="tel:+916305333751" className="cta-button call-now-btn">
+              <FaPhone /> Call Now
+            </a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=YourDestination" className="cta-button get-directions-btn">
+              <FaMapMarkerAlt /> Get Directions
+            </a>
+          </div>
         </div>
       </div>
     </>

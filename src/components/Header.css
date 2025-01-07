@@ -68,6 +68,39 @@ nav ul li a {
   transition: color 0.3s ease;
 }
 
+/* CTA Buttons - Call Now and Get Directions */
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* CTA Button Styles */
+.cta-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #FFD700; /* Gold background */
+  color: black; /* Black text */
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button svg {
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Button Hover Effects */
+.cta-button:hover {
+  background-color: #FFB200; /* Darker gold on hover */
+}
+
 /* Book Now Button */
 .book-now-btn {
   background-color: #FFD700; /* Gold background */
@@ -105,6 +138,11 @@ nav ul li a {
   nav ul li a {
     color: black; /* Black text for mobile */
     font-size: 18px;
+  }
+
+  /* Hide CTA buttons on mobile */
+  .cta-buttons {
+    display: none;
   }
 }
 
@@ -160,7 +198,7 @@ nav ul li a {
     width: auto; /* Maintain aspect ratio */
     height: 60px; /* Adjusted height for mobile */
   }
-  
+
   .hamburger {
     display: block; /* Show the hamburger menu button */
     font-size: 28px; /* Slightly larger size for better visibility */
