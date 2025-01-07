@@ -9,34 +9,36 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0); // Track last scroll position
   const [showTopBar, setShowTopBar] = useState(true); // Track visibility of top bar
 
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-
-    // Check if scrolling down
-    if (currentScrollY > 50) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-
-    // Show or hide the top bar based on scroll direction
-    if (currentScrollY > lastScrollY && currentScrollY > 50) {
-      setShowTopBar(false); // Hide top bar when scrolling down
-    } else {
-      setShowTopBar(true); // Show top bar when scrolling up
-    }
-
-    setLastScrollY(currentScrollY); // Update last scroll position
-  };
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Check if scrolling down
+      if (currentScrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+
+      // Show or hide the top bar based on scroll direction
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setShowTopBar(false); // Hide top bar when scrolling down
+      } else {
+        setShowTopBar(true); // Show top bar when scrolling up
+      }
+
+      setLastScrollY(currentScrollY); // Update last scroll position
+    };
+
     window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]); // Re-run effect on scroll position change
+  }, [lastScrollY]); // Re-run effect when lastScrollY changes
 
   return (
     <>

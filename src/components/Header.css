@@ -160,10 +160,18 @@ nav ul li a {
     width: auto; /* Maintain aspect ratio */
     height: 60px; /* Adjusted height for mobile */
   }
+  
   .hamburger {
     display: block; /* Show the hamburger menu button */
     font-size: 28px; /* Slightly larger size for better visibility */
     cursor: pointer; /* Change the cursor to a pointer */
-    color: #FFD700; /* Gold color for hamburger menu */
+    background-color: #000000; /* Black background to match the header */
+    color: #FFD700; /* Gold color for hamburger icon */
+    border: none; /* Remove border */
+    padding: 8px; /* Add padding for better alignment */
+    border-radius: 5px; /* Slightly rounded corners */
+  }
+  .hamburger:hover {
+    background-color: #FFB200; /* Darker gold background on hover */
   }
 }

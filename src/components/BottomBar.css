@@ -6,8 +6,7 @@
   height: 56px; /* Slightly taller for breathing space */
   padding: 0; /* Remove any internal padding */
   margin: 0; /* Remove any accidental margin */
-  background: linear-gradient(90deg, #FF01B6, #FF66B2);
-/* Subtle gradient for a premium look */
+  background: linear-gradient(90deg, #FFD700, #000000); /* Gold to Black gradient */
   position: fixed;
   bottom: 0;
   width: 100%; /* Full width */
@@ -26,8 +25,8 @@
   height: 50px; /* Adjusted height for consistency */
   padding: 10px 16px; /* Add more padding for breathing room */
   margin: 0; /* Remove any accidental margin */
-  background-color: #ffffff; /* White button background */
-  color: #FF01B6; /* Vibrant pink for text and icons */
+  background-color: #FFD700; /* Gold background for buttons */
+  color: #000000; /* Black text and icons for contrast */
   font-size: 16px; /* Text size for readability */
   font-weight: bold; /* Bold font for emphasis */
   text-decoration: none; /* Remove underline */
@@ -48,8 +47,8 @@
 
 /* Button Hover Effect */
 .cta-button:hover {
-  background-color: #FFE6F3; /* Light pink background on hover */
-  color: #FF01B6; /* Keep text vibrant pink */
+  background-color: #FFB200; /* Darker gold background on hover */
+  color: #000000; /* Keep text black */
   transform: scale(1.07); /* Slightly stronger enlargement on hover */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add more shadow on hover */
 }
