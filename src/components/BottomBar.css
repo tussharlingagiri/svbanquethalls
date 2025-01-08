@@ -6,7 +6,7 @@
   height: 56px; /* Slightly taller for breathing space */
   padding: 0; /* Remove any internal padding */
   margin: 0; /* Remove any accidental margin */
-  background: linear-gradient(90deg, #FFD700, #000000); /* Gold to Black gradient */
+  background:  #000000; /* Gold to Black gradient */
   position: fixed;
   bottom: 0;
   width: 100%; /* Full width */
@@ -73,3 +73,4 @@
     display: none; /* Hide bar on desktop */
   }
 }
+
