@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll"; // Import Link from react-scroll
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa"; // For social icons
 import { FaPhone, FaMapMarkerAlt } from "react-icons/fa"; // For phone and map icons
 import "./Header.css";
@@ -75,10 +75,31 @@ const Header = () => {
           </button>
           <nav>
             <ul className={isMenuOpen ? "active" : ""}>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/services">Services</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li>
+                <Link to="hero-video" smooth={true} duration={500}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="about" smooth={true} duration={500}>
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="services" smooth={true} duration={500}>
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="testimonials" smooth={true} duration={500}>
+                  Testimonials
+                </Link>
+              </li>
+              <li>
+                <Link to="contact" smooth={true} duration={500}>
+                  Contact
+                </Link>
+              </li>
             </ul>
           </nav>
 
