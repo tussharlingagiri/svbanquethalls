@@ -53,9 +53,10 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add more shadow on hover */
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments for Mobile */
 @media (max-width: 768px) {
   .bottom-bar {
+    display: flex !important; /* Ensure the bottom bar is visible */
     height: 60px; /* Adjust height for smaller screens */
   }
 
@@ -65,11 +66,22 @@
     font-size: 14px; /* Slightly smaller font size */
     border-radius: 10px; /* Slightly reduced corners for compact look */
   }
-}
 
-/* Hide Bottom Bar on Larger Screens */
-@media (min-width: 769px) {
-  .bottom-bar {
-    display: none; /* Hide bar on desktop */
+  div[style*="position: fixed; top: 75%; right: 20px;"] {
+    display: flex !important; /* Ensure floating buttons are visible on mobile */
+    flex-direction: column; /* Keep buttons stacked vertically */
+    gap: 15px; /* Maintain space between buttons */
   }
 }
+
+/* Hide Floating Buttons and Bottom Bar on Larger Screens */
+@media (min-width: 769px) {
+  .bottom-bar {
+    display: none !important; /* Hide the bottom bar on desktop */
+  }
+
+  div[style*="position: fixed; top: 75%; right: 20px;"] {
+    display: none !important; /* Hide the floating buttons on desktop */
+  }
+}
+
