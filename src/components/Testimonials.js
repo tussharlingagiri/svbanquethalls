@@ -1,18 +1,12 @@
-import React from "react";
-import { motion } from "framer-motion";
+// Testimonials.js
+import React from 'react';
+import Testimonial from './Testimonial';  // Import the Testimonial component
 
-const Testimonial = ({ text, author }) => (
-  <motion.div
-    className="testimonial"
-    initial={{ x: -100, opacity: 0 }}
-    whileInView={{ x: 0, opacity: 1 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.6 }}
-  >
-    <p>"{text}"</p>
-    <h4>- {author}</h4>
-  </motion.div>
+const Testimonials = () => (
+  <div className="testimonials">
+    <Testimonial text="This is a great venue!" author="John Doe" />
+    <Testimonial text="Perfect for our event!" author="Jane Smith" />
+  </div>
 );
 
-export default Testimonial;
-
+export default Testimonials;

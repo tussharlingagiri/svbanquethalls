@@ -56,16 +56,45 @@
 }
 
 /* Navigation */
+
 nav ul {
   display: flex;
   gap: 20px;
   list-style: none;
+  padding: 0; /* Ensure no padding */
+  margin: 0; /* Ensure no margin */
 }
+
+/* Individual link styles */
 nav ul li a {
   text-decoration: none;
   color: white;
   font-size: 16px;
-  transition: color 0.3s ease;
+  font-weight: bold; /* Makes the text bolder for visibility */
+  transition: color 0.3s ease, transform 0.3s ease; /* Adds smooth transitions for color and scale */
+  padding: 5px 10px; /* Adds padding for better clickable area */
+  border-radius: 4px; /* Rounded corners for the link */
+}
+
+/* Hover effect */
+nav ul li a:hover {
+  color: #FFD700; /* Gold text color on hover */
+  transform: scale(1.1); /* Slightly enlarge the text on hover */
+  background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+}
+
+/* Active link state (when clicked or scrolled into view) */
+nav ul li a.active {
+  color: #FFD700; /* Gold color for active links */
+  font-weight: bold; /* Keep the font bold for active link */
+  background-color: rgba(255, 255, 255, 0.3); /* Highlight active link with background */
+  transform: scale(1.05); /* Slight scaling effect to indicate it's active */
+}
+
+/* Focus state for accessibility */
+nav ul li a:focus {
+  outline: none; /* Remove the default focus outline */
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.8); /* Add a gold glow for focus state */
 }
 
 /* CTA Buttons - Call Now and Get Directions */
@@ -99,6 +128,7 @@ nav ul li a {
 /* Button Hover Effects */
 .cta-button:hover {
   background-color: #FFB200; /* Darker gold on hover */
+  
 }
 
 /* Book Now Button */
@@ -163,20 +193,39 @@ nav ul li a {
 }
 
 /* Social Icons Styling */
+/* Social Icons Container */
 .social-icons {
   display: flex;
-  align-items: center; /* Align vertically */
-  gap: 15px; /* Add space between icons */
+  align-items: center;
+  gap: 15px; /* Space between icons */
 }
+
+/* Styling the links */
 .social-icons a {
-  color: black; /* Icon color */
+  color: black; /* Default icon color */
   font-size: 18px; /* Icon size */
-  text-decoration: none; /* No underline */
-  transition: color 0.3s ease; /* Smooth hover effect */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Ensure it's treated as an inline block */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
 }
+
+/* Hover effect for links */
 .social-icons a:hover {
-  color: #FFD700; /* Gold hover effect for icons */
+  color: #FFD700 !important; /* Change color to gold on hover */
+  opacity: 1 !important; /* Ensure opacity stays 1 */
 }
+
+/* Specifically target SVG elements inside links */
+.social-icons a svg {
+  fill: black; /* Set default fill color */
+  transition: fill 0.3s ease; /* Smooth transition on fill change */
+}
+
+/* Hover effect for SVG fill color */
+.social-icons a:hover svg {
+  fill: #FFD700 !important; /* Change fill to gold on hover */
+}
+
 
 /* Mobile View */
 .hamburger {
@@ -213,3 +262,4 @@ nav ul li a {
     background-color: #FFB200; /* Darker gold background on hover */
   }
 }
+

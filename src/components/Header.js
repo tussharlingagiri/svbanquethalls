@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll"; // Import Link from react-scroll
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa"; // For social icons
-import { FaPhone, FaMapMarkerAlt } from "react-icons/fa"; // For phone and map icons
+import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa"; // For phone and map icons
 import "./Header.css";
+// Removed duplicate import of FaPhoneAlt
+import { FaWhatsapp } from "react-icons/fa"; // Importing WhatsApp icon
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,14 +78,13 @@ const Header = () => {
           <nav>
             <ul className={isMenuOpen ? "active" : ""}>
               <li>
-                <Link to="hero-video" smooth={true} duration={500}>
-                  Home
-                </Link>
+              <li>
+              <Link to="hero-video" smooth={true} duration={500}>Home</Link>
+            </li>
               </li>
               <li>
-                <Link to="about" smooth={true} duration={500}>
-                  About Us
-                </Link>
+              <Link to="about" smooth={true} duration={500}>About Us</Link>
+
               </li>
               <li>
                 <Link to="services" smooth={true} duration={500}>
@@ -106,7 +107,7 @@ const Header = () => {
           {/* CTA Buttons */}
           <div className="cta-buttons">
             <a href="tel:+916305333751" className="cta-button call-now-btn">
-              <FaPhone /> Call Now
+              <FaPhoneAlt /> Call Now
             </a>
             <a href="https://www.google.com/maps/dir/?api=1&destination=YourDestination" className="cta-button get-directions-btn">
               <FaMapMarkerAlt /> Get Directions

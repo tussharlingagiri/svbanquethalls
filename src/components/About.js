@@ -1,8 +1,8 @@
 import React from "react";
 import "./About.css";
 
-const About = () => (
-  <section className="about-section">
+const About = ({ id }) => (
+  <section id={id} className="about-section">
     <div className="about-content">
       <h2>About Us</h2>
       <p>
