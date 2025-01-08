@@ -201,19 +201,24 @@ nav ul li a:focus {
 }
 
 /* Styling the links */
+
+/* Social Icons Container */
 .social-icons a {
-  color: black; /* Default icon color */
-  font-size: 18px; /* Icon size */
-  text-decoration: none; /* Remove underline */
-  display: inline-block; /* Ensure it's treated as an inline block */
-  transition: all 0.3s ease; /* Smooth transition for all properties */
+  color: black; /* Default color */
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
 }
+
 
 /* Hover effect for links */
 .social-icons a:hover {
-  color: #FFD700 !important; /* Change color to gold on hover */
-  opacity: 1 !important; /* Ensure opacity stays 1 */
+  color: white ; /* Change color to gold on hover */
+  opacity: 1 ; /* Ensure opacity stays 1 */
 }
+
+
 
 /* Specifically target SVG elements inside links */
 .social-icons a svg {
@@ -221,12 +226,18 @@ nav ul li a:focus {
   transition: fill 0.3s ease; /* Smooth transition on fill change */
 }
 
-/* Hover effect for SVG fill color */
-.social-icons a:hover svg {
-  fill: #FFD700 !important; /* Change fill to gold on hover */
+
+
+
+/* Hover Effect */
+.social-icons a:hover {
+  color: white; /* Gold color on hover */
 }
 
-
+/* Ensure fill color changes on hover */
+.social-icons a:hover svg {
+  fill: white; /* Apply gold fill color to the SVG icon */
+}
 /* Mobile View */
 .hamburger {
   display: none; /* Default to hidden */
