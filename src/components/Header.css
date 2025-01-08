@@ -9,7 +9,7 @@
   overflow: hidden; /* Prevent gap during transition */
 }
 .header-container.scrolled {
-  background-color: #000000; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   /* Black background for header when scrolled */
 }
 
@@ -336,4 +336,8 @@ nav ul li a:focus {
   .hamburger {
     display: none; /* Hide hamburger menu on desktop */
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
