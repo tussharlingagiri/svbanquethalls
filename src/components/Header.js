@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll"; // Import Link from react-scroll
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa"; // For social icons
-import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa"; // For phone and map icons
+import { FaFacebook, FaInstagram, FaLinkedin, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa"; // Import all icons
 import "./Header.css";
-// Removed duplicate import of FaPhoneAlt
-import { FaWhatsapp } from "react-icons/fa"; // Importing WhatsApp icon
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,6 +14,7 @@ const Header = () => {
   };
 
   useEffect(() => {
+    let timeout; // Add a timeout to delay hiding the top bar
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
@@ -29,9 +27,9 @@ const Header = () => {
 
       // Show or hide the top bar based on scroll direction
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setShowTopBar(false); // Hide top bar when scrolling down
+        timeout = setTimeout(() => setShowTopBar(false), 200); // Add a delay before hiding
       } else {
-        setShowTopBar(true); // Show top bar when scrolling up
+        setShowTopBar(true);
       }
 
       setLastScrollY(currentScrollY); // Update last scroll position
@@ -39,8 +37,11 @@ const Header = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup event listener
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Cleanup event listener and timeout
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timeout);
+    };
   }, [lastScrollY]); // Re-run effect when lastScrollY changes
 
   return (
@@ -67,7 +68,7 @@ const Header = () => {
           </div>
         )}
 
-        {/* Main Header - Always visible or after scrolling */}
+        {/* Main Header */}
         <div className={`main-header ${showTopBar ? "" : "main-replace"}`}>
           <a href="/" className="logo">
             <img src={`${process.env.PUBLIC_URL}/newlogo07.png`} alt="S V Banquet Halls" />
@@ -78,26 +79,27 @@ const Header = () => {
           <nav>
             <ul className={isMenuOpen ? "active" : ""}>
               <li>
-              <li>
-              <Link to="hero-video" smooth={true} duration={500}>Home</Link>
-            </li>
+                <Link to="hero-video" smooth={true} duration={700}>
+                  Home
+                </Link>
               </li>
               <li>
-              <Link to="about" smooth={true} duration={500}>About Us</Link>
-
+                <Link to="about" smooth={true} duration={700}>
+                  About Us
+                </Link>
               </li>
               <li>
-                <Link to="services" smooth={true} duration={500}>
+                <Link to="services" smooth={true} duration={700}>
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="testimonials" smooth={true} duration={500}>
+                <Link to="testimonials" smooth={true} duration={700}>
                   Testimonials
                 </Link>
               </li>
               <li>
-                <Link to="contact" smooth={true} duration={500}>
+                <Link to="contact" smooth={true} duration={700}>
                   Contact
                 </Link>
               </li>

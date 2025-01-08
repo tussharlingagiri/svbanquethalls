@@ -9,7 +9,8 @@
   overflow: hidden; /* Prevent gap during transition */
 }
 .header-container.scrolled {
-  background-color: #000000; /* Black background for header when scrolled */
+  background-color: #000000; 
+  /* Black background for header when scrolled */
 }
 
 /* Top Bar */
@@ -55,14 +56,28 @@
   transition: height 0.3s ease;
 }
 
+.logo img:hover {
+  transform: scale(1.1); /* Slight zoom */
+  transition: transform 0.3s ease;
+}
+
 /* Navigation */
 
+
+
 nav ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  padding: 0; /* Ensure no padding */
-  margin: 0; /* Ensure no margin */
+  display: none;
+  flex-direction: column;
+  background-color: #000;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+nav ul.active {
+  display: flex; /* Show menu when active */
 }
 
 /* Individual link styles */
@@ -77,11 +92,14 @@ nav ul li a {
 }
 
 /* Hover effect */
+
 nav ul li a:hover {
-  color: #FFD700; /* Gold text color on hover */
-  transform: scale(1.1); /* Slightly enlarge the text on hover */
-  background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+  color: #FFD700; /* Gold text color */
+  background-color: rgba(255, 255, 255, 0.2); /* Light background */
+  transform: scale(1.05); /* Slight zoom */
+  transition: all 0.3s ease; /* Smooth transition */
 }
+
 
 /* Active link state (when clicked or scrolled into view) */
 nav ul li a.active {
@@ -126,10 +144,13 @@ nav ul li a:focus {
 }
 
 /* Button Hover Effects */
+
 .cta-button:hover {
-  background-color: #FFB200; /* Darker gold on hover */
-  
+  background-color: #FFB200; /* Darker gold */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow */
+  transform: scale(1.05); /* Slight zoom */
 }
+
 
 /* Book Now Button */
 .book-now-btn {
@@ -259,6 +280,8 @@ nav ul li a:focus {
     height: 60px; /* Adjusted height for mobile */
   }
 
+
+
   .hamburger {
     display: block; /* Show the hamburger menu button */
     font-size: 28px; /* Slightly larger size for better visibility */
@@ -268,9 +291,49 @@ nav ul li a:focus {
     border: none; /* Remove border */
     padding: 8px; /* Add padding for better alignment */
     border-radius: 5px; /* Slightly rounded corners */
+    transition: color 0.3s ease;
   }
+  
+  
+
+
   .hamburger:hover {
     background-color: #FFB200; /* Darker gold background on hover */
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-button {
+  animation: fadeIn 0.8s ease-out;
+}
+
+@media (min-width: 769px) {
+  nav ul {
+    display: flex !important; /* Always show menu on desktop */
+    flex-direction: row; /* Ensure links are in a row */
+    position: static; /* Remove absolute positioning */
+    background-color: transparent; /* No background for desktop */
+    gap: 20px; /* Space between links */
+    padding: 0; /* Remove extra padding */
+    margin: 0; /* Ensure no margin */
+  }
+
+  .cta-buttons {
+    display: flex; /* Show CTA buttons on desktop */
+    gap: 20px; /* Add space between buttons */
+  }
+
+  .hamburger {
+    display: none; /* Hide hamburger menu on desktop */
+  }
+}
