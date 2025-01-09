@@ -18,7 +18,6 @@ function App() {
       {/* Content sections with corresponding component IDs for scrolling */}
       <main id="main-content">
         <HeroVideo id="hero-video" /> {/* Hero video section */}
-        <About id="about" /> {/* About Us section */}
         <Services id="services" /> {/* Services section */}
         <Testimonials id="testimonials" /> {/* Testimonials section */}
       </main>

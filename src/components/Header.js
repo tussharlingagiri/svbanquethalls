@@ -83,11 +83,7 @@ const Header = () => {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link to="about" smooth={true} duration={700}>
-                  About Us
-                </Link>
-              </li>
+              
               <li>
                 <Link to="services" smooth={true} duration={700}>
                   Services
