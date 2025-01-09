@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { FaUtensils, FaGlassCheers, FaHome, FaCar, FaWheelchair, FaStar } from "react-icons/fa";
+import {
+  FaUtensils,
+  FaGlassCheers,
+  FaHome,
+  FaCar,
+  FaWheelchair,
+  FaStar,
+} from "react-icons/fa";
 import "./Services.css";
 
 const Services = () => {
@@ -13,7 +20,7 @@ const Services = () => {
       id: "food",
       title: "Food",
       description: "Flexible food options tailored to your event.",
-      icon: <FaUtensils />,
+      icon: <FaUtensils />, 
       details: [
         "Vendor Flexibility: Bring your own vendors for catering.",
         "Kitchen Access: Fully equipped kitchens available for meal preparation.",
@@ -25,7 +32,7 @@ const Services = () => {
       id: "events",
       title: "Events",
       description: "Freedom to celebrate your way.",
-      icon: <FaGlassCheers />,
+      icon: <FaGlassCheers />, 
       details: [
         "Decorator Options: Bring your own or choose from our in-house decorators.",
         "Photography Flexibility: Choose your photographer or use our in-house services.",
@@ -37,7 +44,7 @@ const Services = () => {
       id: "halls",
       title: "Our Venues",
       description: "Elegant spaces to elevate every celebration.",
-      icon: <FaHome />,
+      icon: <FaHome />, 
       details: [
         "2 A/C Halls: Elegant and comfortable with premium sound systems.",
         "1 Non-A/C Hall: Spacious and versatile with charming decor.",
@@ -49,7 +56,7 @@ const Services = () => {
       id: "parking",
       title: "Parking",
       description: "Effortless parking facilities for all events.",
-      icon: <FaCar />,
+      icon: <FaCar />, 
       details: [
         "Valet Parking: Available upon request for ease and convenience.",
         "Cellar Parking: Limited parking space for select vehicles.",
@@ -61,7 +68,7 @@ const Services = () => {
       id: "accessibility",
       title: "Accessibility",
       description: "Inclusive spaces for all attendees.",
-      icon: <FaWheelchair />,
+      icon: <FaWheelchair />, 
       details: [
         "Elevator Access: Convenient elevators for all guests.",
         "Wheelchair-Friendly: Fully accessible spaces for wheelchairs.",
@@ -73,7 +80,7 @@ const Services = () => {
       id: "amenities",
       title: "Amenities",
       description: "Ensuring a seamless and comfortable experience.",
-      icon: <FaStar />,
+      icon: <FaStar />, 
       details: [
         "Power Backup: Uninterrupted electricity to keep your events running smoothly.",
         "Clean Washrooms: Well-maintained facilities for guests.",
@@ -102,13 +109,15 @@ const Services = () => {
         <div className="modal-overlay" onClick={handleCloseModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h3>{activeModal.title}</h3>
-            <p>{activeModal.details.pop()}</p>
             <ul>
               {activeModal.details.map((detail, index) => (
                 <li key={index}>{detail}</li>
               ))}
             </ul>
-            <button className="cta-button close-button" onClick={handleCloseModal}>
+            <button
+              className="cta-button close-button"
+              onClick={handleCloseModal}
+            >
               Close
             </button>
           </div>
