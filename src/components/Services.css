@@ -1,48 +1,50 @@
 /* Services Section */
 .services {
   padding: 50px 20px;
-  background-color: #f9f9f9; /* Light background for contrast */
+  background-color: #f9f9f9; /* Light gray background */
   text-align: center;
 }
 
 .services h2 {
   font-size: 36px;
   color: #333333; /* Dark gray for heading */
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
+/* Service List (Flexbox for Floating Layout) */
 .service-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-  gap: 20px;
-  justify-items: center; /* Center items horizontally */
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: center; /* Center items horizontally */
+  gap: 30px; /* Spacing between cards */
 }
 
-/* Service Item Card */
+/* Service Item (Floating Card Style) */
 .service-item {
   background-color: #ffffff; /* White card */
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for floating effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
+  width: 300px; /* Fixed width for cards */
+  text-align: center; /* Center-align text inside cards */
 }
 
 .service-item:hover {
-  transform: translateY(-10px); /* Slight lift on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  transform: translateY(-10px); /* Lift card on hover */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 /* Icon Styling */
 .service-item .icon {
-  font-size: 36px;
+  font-size: 40px;
   color: #FF01B6; /* Magenta icon */
   margin-bottom: 15px;
 }
 
 /* Service Heading */
 .service-item h3 {
-  font-size: 20px;
+  font-size: 22px;
   color: #FF01B6; /* Magenta for heading */
   margin-bottom: 10px;
 }
@@ -61,12 +63,20 @@
   color: #ffffff; /* White text */
   background-color: #FFD700; /* Gold button */
   border: none;
-  border-radius: 4px;
+  border-radius: 8px; /* Rounded corners for buttons */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .service-item .cta-button:hover {
   background-color: #FFB200; /* Darker gold on hover */
-  transform: scale(1.05); /* Slight zoom */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .service-item {
+    width: 100%; /* Full width on smaller screens */
+    margin-bottom: 20px;
+  }
 }
