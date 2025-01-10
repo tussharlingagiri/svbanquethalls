@@ -6,7 +6,7 @@ const HeroVideo = () => {
     <div className="hero-video-container">
       <video
         className="hero-video"
-        src="https://tussharlingagiri.github.io/svbanquethalls/video01.mp4" // Use the full URL
+        src="/svbanquethalls/video03.mp4" // Use the full URL
         autoPlay
         muted
         loop
