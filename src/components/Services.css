@@ -3,6 +3,16 @@
   text-align: center;
 }
 
+.service-icon {
+  font-size: 40px; /* Adjust size as needed */
+  color: #ffb400; /* Gold color */
+  margin-bottom: 10px; /* Adjust space between icon and title */
+  position: absolute;
+  top: 10px; /* Adjust this value to bring the icon down */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .service-list {
   display: flex;
   flex-wrap: wrap;
@@ -11,13 +21,17 @@
 }
 
 .service-card {
-  background: #fff;
+  background: black;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 280px;
+  height: 400px; /* Set a fixed height for all cards */
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
   overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Allow vertical alignment */
+  position: relative;
 }
 
 .service-card:hover {
@@ -39,20 +53,26 @@
 
 .service-content {
   padding: 15px;
+  flex-grow: 1; /* Allow content to fill remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out the title, description, and button */
+  position: relative; /* To position the icon within this section */
 }
 
 .service-content h3 {
   font-size: 18px;
   color: #ffb400;
+  margin-top: 40px; /* Adjust the top margin to bring the heading down */
   margin-bottom: 10px;
 }
 
 .service-content p {
   font-size: 14px;
-  color: #555;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Learn More Button - Enhanced Look */
 .learn-more-button {
   padding: 10px 20px;
   background-color: #FFD700;
@@ -72,8 +92,8 @@
 }
 
 .learn-more-button:active {
-  transform: translateY(2px);  /* Push down effect on button click */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Add depth when clicked */
+  transform: translateY(2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Modal Overlay */

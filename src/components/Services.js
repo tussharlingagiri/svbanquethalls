@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { GiMeal } from "react-icons/gi"; // Using GiMeal icon for hot dish
 import "./Services.css";
 
 const Services = () => {
@@ -8,7 +9,7 @@ const Services = () => {
     {
       id: "food",
       title: "Food",
-      description: "Flexible food options tailored to your event.",
+      description: "Customizable Event Catering",
       image: "/svbanquethalls/food.png",
       details: [
         "Vendor Flexibility: Bring your own vendors for catering.",
@@ -89,19 +90,20 @@ const Services = () => {
               className="service-image"
             />
             <div className="service-content">
+              {service.id === "food" && (
+                <GiMeal className="service-icon" /> // Hot dish icon for Food service
+              )}
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              {service.id === "food" && (
-                <button
-                  className="button learn-more-button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActiveService(service);
-                  }}
-                >
-                  Learn More
-                </button>
-              )}
+              <button
+                className="button learn-more-button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveService(service);
+                }}
+              >
+                Learn More
+              </button>
             </div>
           </div>
         ))}
