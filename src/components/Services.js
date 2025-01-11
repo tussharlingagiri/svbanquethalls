@@ -9,7 +9,7 @@ const Services = () => {
       id: "food",
       title: "Food",
       description: "Flexible food options tailored to your event.",
-      image: "/svbanquethalls/food2.png",
+      image: "/svbanquethalls/food.png",
       details: [
         "Vendor Flexibility: Bring your own vendors for catering.",
         "Kitchen Access: Fully equipped kitchens available for meal preparation.",
@@ -83,10 +83,25 @@ const Services = () => {
             className="service-card"
             onClick={() => setActiveService(service)}
           >
-            <img src={service.image} alt={service.title} className="service-image" />
+            <img
+              src={service.image}
+              alt={service.title}
+              className="service-image"
+            />
             <div className="service-content">
               <h3>{service.title}</h3>
               <p>{service.description}</p>
+              {service.id === "food" && (
+                <button
+                  className="button learn-more-button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveService(service);
+                  }}
+                >
+                  Learn More
+                </button>
+              )}
             </div>
           </div>
         ))}
@@ -94,10 +109,7 @@ const Services = () => {
 
       {activeService && (
         <div className="modal-overlay" onClick={() => setActiveService(null)}>
-          <div
-            className="modal-content"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <img
               src={activeService.image}
               alt={activeService.title}
@@ -111,7 +123,7 @@ const Services = () => {
               ))}
             </ul>
             <button
-              className="close-button"
+              className="button close-button"
               onClick={() => setActiveService(null)}
             >
               Close
