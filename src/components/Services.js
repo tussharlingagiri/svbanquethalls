@@ -1,9 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GiMeal } from "react-icons/gi"; // Using GiMeal icon for hot dish
 import "./Services.css";
 
 const Services = () => {
   const [activeService, setActiveService] = useState(null);
+
+  // Effect to disable/enable scrolling when modal opens/closes
+  useEffect(() => {
+    if (activeService) {
+      // Disable body scroll when modal is active
+      document.body.style.overflow = "hidden";
+    } else {
+      // Enable body scroll when modal is closed
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [activeService]);
 
   const services = [
     {
@@ -96,7 +112,7 @@ const Services = () => {
               <h3>{service.title}</h3>
               <p>{service.description}</p>
               <button
-                className="button learn-more-button"
+                className="button learn-now-button"
                 onClick={(e) => {
                   e.stopPropagation();
                   setActiveService(service);
