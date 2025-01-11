@@ -3,17 +3,36 @@
   display: flex;
   justify-content: center; /* Center buttons horizontally */
   align-items: center; /* Align buttons vertically */
-  height: 56px; /* Slightly taller for breathing space */
+  height: 62px; /* Slightly taller for breathing space */
   padding: 0; /* Remove any internal padding */
   margin: 0; /* Remove any accidental margin */
   background:  #000000; /* Gold to Black gradient */
   position: fixed;
-  bottom: 0;
+  bottom: 40px;
   width: 100%; /* Full width */
   z-index: 1000; /* Keep above content */
   gap: 24px; /* Slightly increase space between buttons */
   box-sizing: border-box; /* Include padding in dimensions */
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Sticky Footer Styles */
+.sticky-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: #333333; /* Dark gray for differentiation */
+  color: #FFD700; /* Gold text for contrast */
+  font-size: 14px;
+  font-weight: 500;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999; /* Below bottom bar */
+  padding: 0 16px;
+  box-sizing: border-box;
+  border-top: 2px solid #FFD700; /* Optional gold border for separation */
 }
 
 /* Button Styles */
@@ -41,8 +60,8 @@
 .cta-button svg {
   vertical-align: middle; /* Align icons with text */
   margin-right: 8px; /* Space between icon and text */
-  width: 20px; /* Increase icon size for better visibility */
-  height: 20px; /* Match icon size */
+  width: 24px; /* Increase icon size for better visibility */
+  height: 24px; /* Match icon size */
 }
 
 /* Button Hover Effect */
@@ -50,7 +69,8 @@
   background-color: #FFB200; /* Darker gold background on hover */
   color: #000000; /* Keep text black */
   transform: scale(1.07); /* Slightly stronger enlargement on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add more shadow on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+ /* Add more shadow on hover */
 }
 
 /* Responsive Adjustments for Mobile */
@@ -61,7 +81,7 @@
   }
 
   .cta-button {
-    min-width: 150px; /* Compact width for smaller screens */
+    min-width: 140px; /* Compact width for smaller screens */
     height: 46px; /* Compact height */
     font-size: 14px; /* Slightly smaller font size */
     border-radius: 10px; /* Slightly reduced corners for compact look */
@@ -85,3 +105,21 @@
   }
 }
 
+/* Responsive View for Sticky Footer */
+@media (min-width: 769px) {
+  .sticky-footer {
+    display: none; /* Hide footer on desktop */
+  }
+}
+
+/* Adjust Body Padding */
+body {
+  padding-bottom: 102px; /* Bottom bar + footer height */
+}
+
+/* Responsive View for Sticky Footer */
+@media (min-width: 769px) {
+  .sticky-footer {
+    display: none; /* Hide footer on desktop */
+  }
+}
