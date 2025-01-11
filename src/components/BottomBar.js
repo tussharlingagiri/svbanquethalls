@@ -32,7 +32,9 @@ const BottomBar = () => {
       </div>
       {/* Sticky Footer */}
       <div className="sticky-footer">
-        <p>© 2025 SV Banquet Halls | All Rights Reserved</p>
+        <p>© 2025 SV Banquet Halls |  Mansoorabad, LB Nagar, Hyderabad - 500072
+
+</p>
       </div>
     </>
   );
