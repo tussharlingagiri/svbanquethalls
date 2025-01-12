@@ -9,7 +9,7 @@ const Services = () => {
       id: "food",
       title: "Food",
       description: "Customizable Event Catering",
-      image: "/svbanquethalls/food.png",
+      image: "/svbanquethalls/food4.png",
       details: [
         "Vendor Flexibility: Bring your own vendors for catering.",
         "Kitchen Access: Two fully equipped kitchens are available for patrons who wish to prepare their own meals within the halls.",
