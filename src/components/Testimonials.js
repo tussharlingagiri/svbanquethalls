@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from "react";
 import './Testimonial.css'; // Import the custom styles
 
 const Testimonials = () => {
@@ -7,26 +7,25 @@ const Testimonials = () => {
       text: "Good one for birthday parties and small occasions, don't have enough car parking except that everything is fine with good dining space.",
       author: "Subrahmanyam Immaneni",
       rating: 5,
-      googleReviewLink: "https://maps.app.goo.gl/KBk2dsgnBUxDk15aA"
+      source: "Google Reviews" // Add source field for reference
     },
     {
       text: "Perfect for our event!",
       author: "Jane Smith",
       rating: 4,
-      googleReviewLink: "https://maps.app.goo.gl/KBk2dsgnBUxDk15aA"
+      source: "Google Reviews" // Add source field for reference
     },
     {
       text: "A memorable experience!",
       author: "Alice Johnson",
       rating: 4,
-      googleReviewLink: "https://maps.app.goo.gl/KBk2dsgnBUxDk15aA"
+      source: "Google Reviews" // Add source field for reference
     },
   ];
 
   return (
     <div id="testimonials" className="testimonials">
-      <div className="section-divider"></div> {/* Section Divider */}
-      <h2>What Our Clients Say</h2> {/* Section Heading */}
+      <h2>What Our Clients Say</h2>
       <div className="testimonial-container">
         {reviews.map((review, index) => (
           <div key={index} className="testimonial">
@@ -42,14 +41,7 @@ const Testimonials = () => {
               </div>
             </div>
             <p className="testimonial-text">"{review.text}"</p>
-            <a 
-              href={review.googleReviewLink} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="google-review-link"
-            >
-              View Review
-            </a>
+            <p className="testimonial-source">{review.source}</p> {/* Show source */}
           </div>
         ))}
       </div>

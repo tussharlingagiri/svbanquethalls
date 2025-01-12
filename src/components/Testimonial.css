@@ -79,6 +79,17 @@
   text-align: justify;
 }
 
+.testimonial-source {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 10px;
+}
+
+.testimonial-source::before {
+  content: "✔ "; /* Checkmark for trust */
+  color: #4CAF50; /* Green color for verified */
+}
+
 .google-review-link {
   position: absolute;
   bottom: 20px; /* Place it near the bottom but not at the extreme */
@@ -116,11 +127,12 @@
     padding: 18px; /* Adjusted padding for consistency */
   }
 }
+
+/* Testimonials Section Heading */
 .testimonials h2 {
   font-size: 2.5rem; /* Refined font size for emphasis */
   color: #ffb400; /* Vibrant color to grab attention */
   margin-bottom: 3vh;
   font-weight: bold;
   font-family: 'Roboto', sans-serif; /* Modern, clean sans-serif font */
-
 }
