@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 /* Services Section */
 .services {
   padding: 5vh 5vw;
@@ -59,6 +61,8 @@
 .service-content {
   padding: 1.5vh 1vw;
   text-align: left;
+  font-family: 'Roboto', sans-serif; /* Modern, clean sans-serif font */
+
 }
 
 .services h2 {
@@ -66,18 +70,31 @@
   color: #ffb400; /* Vibrant color to grab attention */
   margin-bottom: 3vh;
   font-weight: bold;
+  font-family: 'Roboto', sans-serif; /* Modern, clean sans-serif font */
+
 }
 
 .service-content h3 {
   font-size: 1.4rem;
   color: #333;
   margin-bottom: 1vh;
+  font-family: 'Roboto', sans-serif; /* Modern, clean sans-serif font */
+
 }
 
+
+
+/* Service Description */
 .service-content p {
-  font-size: 1rem;
-  color: #666;
+  font-size: 1.1rem; /* Slightly larger font for better readability */
+  font-family: 'Roboto', sans-serif; /* Modern, clean sans-serif font */
+  color: #555; /* Neutral gray for a professional look */
+  font-weight: 400; /* Normal font weight for readability */
+  line-height: 1.6; /* Increase line spacing for better readability */
+  margin: 0.5vh 0; /* Add some spacing above and below */
+  text-align: justify; /* Ensure a clean, uniform text alignment */
 }
+
 
 /* Service Details */
 .service-details {
@@ -92,12 +109,15 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  text-align: left
 }
 
 .service-details ul li {
   font-size: 1rem;
   color: #555;
   margin-bottom: 1vh;
+  font-family: 'Roboto', sans-serif; /* Modern, clean sans-serif font */
+
 }
 
 .service-details ul li::before {
@@ -129,14 +149,20 @@
 
   .service-content h3 {
     font-size: 1.3rem; /* Adjust heading size */
+    font-family: 'Roboto', sans-serif; /* Modern, clean sans-serif font */
+
   }
 
   .service-content p {
     font-size: 0.9rem; /* Adjust text size */
+    font-family: 'Roboto', sans-serif; /* Modern, clean sans-serif font */
+
   }
 
   .service-details ul li {
     font-size: 0.9rem; /* Adjust detail font size */
+    font-family: 'Roboto', sans-serif; /* Modern, clean sans-serif font */
+
   }
 }
 
@@ -157,6 +183,8 @@
   margin: 15px auto; /* Center button and add spacing */
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-family: 'Roboto', sans-serif; /* Modern, clean sans-serif font */
+
 }
 
 /* Hover Effect */
