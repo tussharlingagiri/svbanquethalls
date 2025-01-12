@@ -39,7 +39,6 @@ const Services = () => {
         "Terrace Space: Perfect for evening gatherings with ambient lighting.",
       ],
     },
-    // Add more services as needed
   ];
 
   return (
