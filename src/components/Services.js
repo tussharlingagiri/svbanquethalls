@@ -41,7 +41,7 @@ const Services = () => {
     {
       id: "parking",
       title: "Parking",
-      description: "Effortless parking facilities for all events.",
+      description: "Effortless parking for all events.",
       image: "/svbanquethalls/parking.jpg",
       details: [
         "Valet Parking: Available upon request for patrons' event bookings.",
@@ -63,7 +63,7 @@ const Services = () => {
     {
       id: "amenities",
       title: "Amenities",
-      description: "Ensuring a seamless and comfortable experience.",
+      description: "Ensuring a comfortable experience.",
       image: "/svbanquethalls/amenities.jpg",
       details: [
         "Power Backup: Uninterrupted electricity to keep your events running smoothly.",
