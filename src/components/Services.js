@@ -1,25 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { GiMeal } from "react-icons/gi"; // Using GiMeal icon for hot dish
+import React, { useState } from "react";
+import { GiMeal } from "react-icons/gi"; // Icon for Food
 import "./Services.css";
 
 const Services = () => {
   const [activeService, setActiveService] = useState(null);
-
-  // Effect to disable/enable scrolling when modal opens/closes
-  useEffect(() => {
-    if (activeService) {
-      // Disable body scroll when modal is active
-      document.body.style.overflow = "hidden";
-    } else {
-      // Enable body scroll when modal is closed
-      document.body.style.overflow = "auto";
-    }
-
-    // Cleanup on unmount
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [activeService]);
 
   const services = [
     {
@@ -55,39 +39,7 @@ const Services = () => {
         "Terrace Space: Perfect for evening gatherings with ambient lighting.",
       ],
     },
-    {
-      id: "parking",
-      title: "Parking",
-      description: "Effortless parking facilities for all events.",
-      image: "path-to-parking-image.jpg",
-      details: [
-        "Valet Parking: Available upon request for ease and convenience.",
-        "Cellar Parking: Limited parking space for select vehicles.",
-        "Street Parking: Ample parking space for guests.",
-      ],
-    },
-    {
-      id: "accessibility",
-      title: "Accessibility",
-      description: "Inclusive spaces for all attendees.",
-      image: "path-to-accessibility-image.jpg",
-      details: [
-        "Elevator Access: Convenient elevators for all guests.",
-        "Wheelchair-Friendly: Fully accessible spaces for wheelchairs.",
-        "Thoughtful Steps Design: Easy navigation for everyone.",
-      ],
-    },
-    {
-      id: "amenities",
-      title: "Amenities",
-      description: "Ensuring a seamless and comfortable experience.",
-      image: "path-to-amenities-image.jpg",
-      details: [
-        "Power Backup: Uninterrupted electricity to keep your events running smoothly.",
-        "Clean Washrooms: Well-maintained facilities for guests.",
-        "Dressing Rooms: Dedicated spaces for preparation and convenience.",
-      ],
-    },
+    // Add more services as needed
   ];
 
   return (
@@ -97,8 +49,12 @@ const Services = () => {
         {services.map((service) => (
           <div
             key={service.id}
-            className="service-card"
-            onClick={() => setActiveService(service)}
+            className={`service-card ${
+              activeService === service.id ? "active" : ""
+            }`}
+            onClick={() =>
+              setActiveService(activeService === service.id ? null : service.id)
+            }
           >
             <img
               src={service.image}
@@ -107,48 +63,23 @@ const Services = () => {
             />
             <div className="service-content">
               {service.id === "food" && (
-                <GiMeal className="service-icon" /> // Hot dish icon for Food service
+                <GiMeal className="service-icon" /> // Icon for Food
               )}
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <button
-                className="button learn-now-button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setActiveService(service);
-                }}
-              >
-                Learn More
-              </button>
             </div>
+            {activeService === service.id && (
+              <div className="service-details">
+                <ul>
+                  {service.details.map((detail, index) => (
+                    <li key={index}>{detail}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         ))}
       </div>
-
-      {activeService && (
-        <div className="modal-overlay" onClick={() => setActiveService(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <img
-              src={activeService.image}
-              alt={activeService.title}
-              className="modal-image"
-            />
-            <h3>{activeService.title}</h3>
-            <p>{activeService.description}</p>
-            <ul>
-              {activeService.details.map((detail, index) => (
-                <li key={index}>{detail}</li>
-              ))}
-            </ul>
-            <button
-              className="button close-button"
-              onClick={() => setActiveService(null)}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
