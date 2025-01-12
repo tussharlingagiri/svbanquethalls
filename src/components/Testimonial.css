@@ -1,0 +1,118 @@
+/* Section Divider */
+.section-divider {
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #ffd700, #ffb400); /* Gold gradient */
+  margin: 3vh 0; /* Adjusted margin for better spacing */
+}
+
+/* Testimonials Section */
+.testimonial-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid for smaller screens */
+  gap: 3vh 3vw; /* Vertical and horizontal spacing between testimonials */
+  justify-items: center;
+  max-width: 1200px; /* Max width to prevent overflowing on larger screens */
+  margin: 0 auto;
+  padding: 4vh 5vw; /* Adding padding to container */
+}
+
+/* Ensure the grid layout adapts for larger screens (desktops) */
+@media (min-width: 1024px) {
+  .testimonial-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row on larger screens */
+    gap: 3vh 3vw; /* Set consistent gap for desktop as well */
+  }
+}
+
+.testimonial {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 340px;
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  margin-bottom: 3vh; /* Added bottom margin for spacing between cards */
+}
+
+.testimonial:hover {
+  transform: translateY(-1vh);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testimonial-author h4 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.testimonial-rating {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  color: #d3d3d3; /* Light grey for empty stars */
+  font-size: 1.2rem;
+  margin-right: 2px;
+}
+
+.star.filled {
+  color: #ffd700; /* Gold color for filled stars */
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 15px 0;
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
+}
+
+.google-review-link {
+  position: absolute;
+  bottom: 20px; /* Place it near the bottom but not at the extreme */
+  right: 20px; /* Bring the button to the right, not extreme */
+  padding: 8px 15px;
+  background-color: #ffd700; /* Gold */
+  color: #000;
+  font-weight: bold;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.google-review-link:hover {
+  background-color: #ffb400; /* Slightly darker gold */
+  transform: translateY(-2px); /* Slight lift */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .google-review-link {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    bottom: 15px; /* Slightly move up for smaller screens */
+  }
+
+  .testimonial-container {
+    padding: 3vh 3vw; /* Reduced padding for mobile */
+  }
+
+  .testimonial {
+    max-width: 100%; /* Full width for smaller screens */
+    padding: 18px; /* Adjusted padding for consistency */
+  }
+}

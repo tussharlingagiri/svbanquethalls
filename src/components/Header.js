@@ -79,23 +79,23 @@ const Header = () => {
           <nav>
             <ul className={isMenuOpen ? "active" : ""}>
               <li>
-                <Link to="hero-video" smooth={true} duration={700}>
+                <Link to="hero-video" smooth={true} duration={600}>
                   Home
                 </Link>
               </li>
               
               <li>
-                <Link to="services" smooth={true} duration={700}>
+                <Link to="services" smooth={true} duration={600}>
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="testimonials" smooth={true} duration={700}>
+                <Link to="testimonials" smooth={true} duration={600}>
                   Testimonials
                 </Link>
               </li>
               <li>
-                <Link to="contact" smooth={true} duration={700}>
+                <Link to="contact" smooth={true} duration={600}>
                   Contact
                 </Link>
               </li>
