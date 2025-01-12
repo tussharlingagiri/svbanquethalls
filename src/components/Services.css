@@ -5,90 +5,78 @@
   background-color: #f9f9f9;
 }
 
-/* Title Styling */
 .services h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #333;
   margin-bottom: 3vh;
 }
 
-/* Service List Styling */
+/* Service List */
 .service-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3vh;
+  display: grid; /* Use grid layout for clean alignment */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 3vh; /* Space between cards */
+  justify-items: center; /* Center align cards */
 }
 
-/* Service Card Styling */
+/* Service Card */
 .service-card {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 30vw;
-  min-height: 40vh; /* Minimum height to accommodate expanded content */
+  width: 100%; /* Full width within grid */
+  max-width: 350px; /* Cap maximum width */
+  height: auto; /* Let height adjust dynamically */
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  position: relative; /* Ensure expanding content positions correctly */
-  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .service-card:hover {
   transform: translateY(-1vh);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Active Service Card */
 .service-card.active {
   border: 2px solid #ffd700;
-  z-index: 10; /* Bring active card to the front */
-  min-height: 50vh; /* Increase height for expanded content */
+  z-index: 2;
 }
 
 /* Service Image */
 .service-image {
   width: 100%;
-  height: 50%;
+  height: 180px; /* Fixed height for images */
   object-fit: cover;
   border-bottom: 3px solid #ffd700;
-  pointer-events: none; /* Prevent blocking clicks */
-  z-index: 1; /* Ensure image stays below other content */
 }
 
 /* Service Content */
 .service-content {
-  padding: 2vh;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative; /* Ensure correct stacking order */
-  z-index: 2;
+  padding: 1.5vh 1vw;
+  text-align: left;
 }
 
 .service-content h3 {
   font-size: 1.5rem;
-  color: #ffb400;
+  color: #333;
   margin-bottom: 1vh;
 }
 
 .service-content p {
   font-size: 1rem;
-  color: #555;
+  color: #777;
 }
 
 /* Service Details */
 .service-details {
-  padding: 2vh;
-  background-color: #f7f7f7;
+  padding: 1vh 1vw;
+  background: #f9f9f9;
   border-top: 1px solid #eee;
-  z-index: 2;
+  max-height: 200px; /* Cap height for content */
+  overflow-y: auto; /* Add scrolling for lengthy content */
 }
 
-/* Service Details List */
 .service-details ul {
   list-style: none;
   padding: 0;
@@ -96,37 +84,40 @@
 }
 
 .service-details ul li {
-  margin-bottom: 1vh;
   font-size: 1rem;
-  color: #333;
+  color: #555;
+  margin-bottom: 1vh;
 }
 
 .service-details ul li::before {
   content: "✔️";
   margin-right: 0.5vw;
-  color: #ffb400;
-}
-
-/* Icon Styling */
-.service-icon {
-  font-size: 2vw;
-  color: #ffb400;
-  margin-bottom: 1vh;
+  color: #ffd700;
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .services {
+    padding: 4vh 4vw;
+  }
+
+  .service-card {
+    max-width: 100%; /* Full width for smaller screens */
+  }
+}
+
 @media (max-width: 768px) {
   .services {
     padding: 4vh 3vw;
   }
 
   .service-card {
-    width: 90vw;
-    min-height: 50vh;
+    width: 90vw; /* Full width for mobile */
+    max-width: none; /* Remove max-width constraint */
   }
 
   .service-content h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .service-content p {
@@ -135,9 +126,5 @@
 
   .service-details ul li {
     font-size: 0.9rem;
-  }
-
-  .service-icon {
-    font-size: 4vw;
   }
 }

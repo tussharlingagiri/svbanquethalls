@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { GiMeal } from "react-icons/gi"; // Icon for Food
 import "./Services.css";
 
 const Services = () => {
@@ -13,30 +12,63 @@ const Services = () => {
       image: "/svbanquethalls/food.png",
       details: [
         "Vendor Flexibility: Bring your own vendors for catering.",
-        "Kitchen Access: Fully equipped kitchens available for meal preparation.",
-        "In-House Catering: Delightful menu crafted by professional chefs.",
+        "Kitchen Access: Two fully equipped kitchens are available for patrons who wish to prepare their own meals within the halls.",
+        "In-House Catering: Our professional chefs are also available to craft a delightful menu tailored to your preferences.",
       ],
     },
     {
       id: "events",
       title: "Events",
       description: "Freedom to celebrate your way.",
-      image: "path-to-events-image.jpg",
+      image: "/images/events.jpg",
       details: [
-        "Decorator Options: Bring your own or choose from our in-house decorators.",
-        "Photography Flexibility: Choose your photographer or use our in-house services.",
-        "No Restrictions: Plan and celebrate any event with ease.",
+        "Decorator Options: Bring your own or choose from our talented in-house decorators to create the perfect ambiance.",
+        "Photography Flexibility: Bring your preferred photographer, or let our skilled in-house photographer capture your special moments.",
+        "No Restrictions: We accommodate all types of events, giving you the freedom to plan and celebrate your way.",
       ],
     },
     {
-      id: "venues",
+      id: "halls",
       title: "Our Venues",
       description: "Elegant spaces to elevate every celebration.",
-      image: "path-to-venues-image.jpg",
+      image: "/images/halls.jpg",
       details: [
-        "2 A/C Halls: Elegant and comfortable with premium sound systems.",
+        "2 A/C Halls: Elegant and comfortable, featuring cozy curtains and premium sound systems.",
         "1 Non-A/C Hall: Spacious and versatile with charming decor.",
         "Terrace Space: Perfect for evening gatherings with ambient lighting.",
+      ],
+    },
+    {
+      id: "parking",
+      title: "Parking",
+      description: "Effortless parking facilities for all events.",
+      image: "/images/parking.jpg",
+      details: [
+        "Valet Parking: Available upon request for patrons' event bookings.",
+        "Cellar Parking: Limited parking space for a select number of vehicles.",
+        "Street Parking: Ample parking space located right in front of the halls.",
+      ],
+    },
+    {
+      id: "accessibility",
+      title: "Accessibility",
+      description: "Inclusive spaces for all attendees.",
+      image: "/images/accessibility.jpg",
+      details: [
+        "Elevator Access: Convenient elevators to ensure ease of movement for all guests.",
+        "Wheelchair-Friendly: Fully accessible spaces designed to accommodate wheelchairs seamlessly.",
+        "Thoughtful Steps Design: Easy navigation for everyone.",
+      ],
+    },
+    {
+      id: "amenities",
+      title: "Amenities",
+      description: "Ensuring a seamless and comfortable experience.",
+      image: "/images/amenities.jpg",
+      details: [
+        "Power Backup: Uninterrupted electricity to keep your events running smoothly.",
+        "Clean Washrooms: Well-maintained facilities for the comfort of your guests.",
+        "Dressing Rooms: Dedicated spaces for preparation and convenience.",
       ],
     },
   ];
@@ -61,9 +93,6 @@ const Services = () => {
               className="service-image"
             />
             <div className="service-content">
-              {service.id === "food" && (
-                <GiMeal className="service-icon" /> // Icon for Food
-              )}
               <h3>{service.title}</h3>
               <p>{service.description}</p>
             </div>
