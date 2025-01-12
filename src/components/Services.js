@@ -9,7 +9,7 @@ const Services = () => {
       id: "food",
       title: "Food",
       description: "Customizable Event Catering",
-      image: "/svbanquethalls/food5.png",
+      image: "/svbanquethalls/foodnew.jpg",
       details: [
         "Vendor Flexibility: Bring your own vendors for catering.",
         "Kitchen Access: Two fully equipped kitchens are available for patrons who wish to prepare their own meals within the halls.",
@@ -20,18 +20,18 @@ const Services = () => {
       id: "events",
       title: "Events",
       description: "Freedom to celebrate your way.",
-      image: "/images/events.jpg",
+      image: "/svbanquethalls/events.jpg",
       details: [
-        "Decorator Options: Bring your own or choose from our talented in-house decorators to create the perfect ambiance.",
-        "Photography Flexibility: Bring your preferred photographer, or let our skilled in-house photographer capture your special moments.",
-        "No Restrictions: We accommodate all types of events, giving you the freedom to plan and celebrate your way.",
+        "Decoration : Bring your own or choose in-house decorators to create the perfect ambiance.",
+        "Photography : Bring your preferred photographer, or let our in-house photographer capture your special moments.",
+        "We accommodate all types of events, giving you the freedom to plan and celebrate your way.",
       ],
     },
     {
       id: "halls",
       title: "Our Venues",
-      description: "Elegant spaces to elevate every celebration.",
-      image: "/images/halls.jpg",
+      description: "Spaces to celebrate all events.",
+      image: "/svbanquethalls/venues.jpg",
       details: [
         "2 A/C Halls: Elegant and comfortable, featuring cozy curtains and premium sound systems.",
         "1 Non-A/C Hall: Spacious and versatile with charming decor.",
@@ -42,7 +42,7 @@ const Services = () => {
       id: "parking",
       title: "Parking",
       description: "Effortless parking facilities for all events.",
-      image: "/images/parking.jpg",
+      image: "/svbanquethalls/parking.jpg",
       details: [
         "Valet Parking: Available upon request for patrons' event bookings.",
         "Cellar Parking: Limited parking space for a select number of vehicles.",
@@ -53,7 +53,7 @@ const Services = () => {
       id: "accessibility",
       title: "Accessibility",
       description: "Inclusive spaces for all attendees.",
-      image: "/images/accessibility.jpg",
+      image: "/svbanquethalls/accessibility.jpg",
       details: [
         "Elevator Access: Convenient elevators to ensure ease of movement for all guests.",
         "Wheelchair-Friendly: Fully accessible spaces designed to accommodate wheelchairs seamlessly.",
@@ -64,7 +64,7 @@ const Services = () => {
       id: "amenities",
       title: "Amenities",
       description: "Ensuring a seamless and comfortable experience.",
-      image: "/images/amenities.jpg",
+      image: "/svbanquethalls/amenities.jpg",
       details: [
         "Power Backup: Uninterrupted electricity to keep your events running smoothly.",
         "Clean Washrooms: Well-maintained facilities for the comfort of your guests.",
