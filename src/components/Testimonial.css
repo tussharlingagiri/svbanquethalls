@@ -3,7 +3,7 @@
   width: 100%;
   height: 5px;
   background: linear-gradient(to right, #ffd700, #ffb400); /* Gold gradient */
-  margin: 3vh 0; /* Adjusted margin for better spacing */
+  margin: 2vh 0; /* Space above and below divider */
 }
 
 /* Testimonials Section */
@@ -115,4 +115,12 @@
     max-width: 100%; /* Full width for smaller screens */
     padding: 18px; /* Adjusted padding for consistency */
   }
+}
+.testimonials h2 {
+  font-size: 2.5rem; /* Refined font size for emphasis */
+  color: #ffb400; /* Vibrant color to grab attention */
+  margin-bottom: 3vh;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif; /* Modern, clean sans-serif font */
+
 }

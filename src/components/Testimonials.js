@@ -25,7 +25,8 @@ const Testimonials = () => {
 
   return (
     <div id="testimonials" className="testimonials">
-      <h2>What Our Clients Say</h2>
+      <div className="section-divider"></div> {/* Section Divider */}
+      <h2>What Our Clients Say</h2> {/* Section Heading */}
       <div className="testimonial-container">
         {reviews.map((review, index) => (
           <div key={index} className="testimonial">
