@@ -2,21 +2,24 @@
 .services {
   padding: 5vh 5vw;
   text-align: center;
-  background-color: #f9f9f9;
+  background: linear-gradient(to bottom, #f9f9f9, #ffffff); /* Subtle gradient */
+  color: #333;
 }
 
-.services h2 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 3vh;
+/* Section Divider */
+.section-divider {
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #ffd700, #ffb400); /* Gold gradient */
+  margin: 2vh 0; /* Space above and below divider */
 }
 
 /* Service List */
 .service-list {
-  display: grid; /* Use grid layout for clean alignment */
+  display: grid; /* Grid layout for uniform alignment */
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-  gap: 3vh; /* Space between cards */
-  justify-items: center; /* Center align cards */
+  gap: 2.5vh; /* Vertical and horizontal spacing */
+  justify-items: center; /* Center align grid items */
 }
 
 /* Service Card */
@@ -25,8 +28,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%; /* Full width within grid */
-  max-width: 350px; /* Cap maximum width */
-  height: auto; /* Let height adjust dynamically */
+  max-width: 340px; /* Cap maximum width */
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -57,15 +59,22 @@
   text-align: left;
 }
 
+.services h2 {
+  font-size: 2.5rem; /* Refined font size for emphasis */
+  color: #ffb400; /* Vibrant color to grab attention */
+  margin-bottom: 3vh;
+  font-weight: bold;
+}
+
 .service-content h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: #333;
   margin-bottom: 1vh;
 }
 
 .service-content p {
   font-size: 1rem;
-  color: #777;
+  color: #666;
 }
 
 /* Service Details */
@@ -73,8 +82,8 @@
   padding: 1vh 1vw;
   background: #f9f9f9;
   border-top: 1px solid #eee;
-  max-height: 200px; /* Cap height for content */
-  overflow-y: auto; /* Add scrolling for lengthy content */
+  max-height: 220px; /* Cap height for lengthy content */
+  overflow-y: auto; /* Add scrolling if needed */
 }
 
 .service-details ul {
@@ -102,29 +111,29 @@
   }
 
   .service-card {
-    max-width: 100%; /* Full width for smaller screens */
+    max-width: 100%; /* Full width for medium screens */
   }
 }
 
 @media (max-width: 768px) {
   .services {
-    padding: 4vh 3vw;
+    padding: 3vh 3vw;
   }
 
   .service-card {
-    width: 90vw; /* Full width for mobile */
-    max-width: none; /* Remove max-width constraint */
+    width: 90vw; /* Full width for smaller screens */
+    max-width: none; /* Remove width cap for flexibility */
   }
 
   .service-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.3rem; /* Adjust heading size */
   }
 
   .service-content p {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Adjust text size */
   }
 
   .service-details ul li {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Adjust detail font size */
   }
 }
