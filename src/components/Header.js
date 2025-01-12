@@ -70,7 +70,7 @@ const Header = () => {
 
         {/* Main Header */}
         <div className={`main-header ${showTopBar ? "" : "main-replace"}`}>
-          <a href="/" className="logo">
+          <a href="/svbanquethalls" className="logo">
             <img src={`${process.env.PUBLIC_URL}/newlogo07.png`} alt="S V Banquet Halls" />
           </a>
           <button className="hamburger" onClick={toggleMenu}>
