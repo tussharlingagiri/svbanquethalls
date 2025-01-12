@@ -4,20 +4,20 @@ import './Testimonial.css'; // Import the custom styles
 const Testimonials = () => {
   const reviews = [
     {
-      text: "Good one for birthday parties and small occasions, don't have enough car parking except that everything is fine with good dining space.",
-      author: "Subrahmanyam Immaneni",
+      text: "Very luxurious banquet Hall. Really had a blast here. Suitable for marriages, birthdays etc. It adds a really rich look to the party with ac halls and spacious dining space.",
+      author: "SAM",
       rating: 5,
       source: "Google Reviews" // Add source field for reference
     },
     {
-      text: "Perfect for our event!",
-      author: "Jane Smith",
-      rating: 4,
+      text: "Hall was comfortable and pretty clean with ac in full swing. Staff cooperated well in every aspect from event to lunch. It is very much comfortable for 300 members with elevator, Generator.Awesome.",
+      author: "Ravinder Vunyale",
+      rating: 5,
       source: "Google Reviews" // Add source field for reference
     },
     {
-      text: "A memorable experience!",
-      author: "Alice Johnson",
+      text: "Good one for birthday parties and small occasions, don't have enough car parking except that everything is fine with good dining space.",
+      author: "Subrahmanyam Immaneni",
       rating: 4,
       source: "Google Reviews" // Add source field for reference
     },
