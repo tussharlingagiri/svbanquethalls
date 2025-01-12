@@ -75,42 +75,50 @@ const Services = () => {
 
   return (
     <section className="services">
-    <div className="section-divider"></div>
-    <h2>Our Services</h2>
-    <div className="service-list">
-      {services.map((service) => (
-        <div
-          key={service.id}
-          className={`service-card ${
-            activeService === service.id ? "active" : ""
-          }`}
-          onClick={() =>
-            setActiveService(activeService === service.id ? null : service.id)
-          }
-        >
-          <img
-            src={service.image}
-            alt={service.title}
-            className="service-image"
-          />
-          <div className="service-content">
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
-          </div>
-          {activeService === service.id && (
-            <div className="service-details">
-              <ul>
-                {service.details.map((detail, index) => (
-                  <li key={index}>{detail}</li>
-                ))}
-              </ul>
+      <div className="section-divider"></div>
+      <h2>Our Services</h2>
+      <div className="service-list">
+        {services.map((service) => (
+          <div
+            key={service.id}
+            className={`service-card ${
+              activeService === service.id ? "active" : ""
+            }`}
+            onClick={() =>
+              setActiveService(activeService === service.id ? null : service.id)
+            }
+          >
+            <img
+              src={service.image}
+              alt={service.title}
+              className="service-image"
+            />
+            <div className="service-content">
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
             </div>
-          )}
-        </div>
-      ))}
-    </div>
-  </section>
-  
+            <button
+              className="learn-more-button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveService(activeService === service.id ? null : service.id);
+              }}
+            >
+              Learn More
+            </button>
+            {activeService === service.id && (
+              <div className="service-details">
+                <ul>
+                  {service.details.map((detail, index) => (
+                    <li key={index}>{detail}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
