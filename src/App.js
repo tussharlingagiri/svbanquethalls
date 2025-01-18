@@ -4,6 +4,7 @@ import Footer from "./components/Footer"; // Import Footer component
 import HeroVideo from "./components/HeroVideo"; // Import HeroVideo component
 import Services from "./components/Services"; // Import Services component
 import Testimonials from "./components/Testimonials"; // Import Testimonials component
+import ContactForm from "./components/ContactForm"; // Import ContactForm component
 import BottomBar from "./components/BottomBar"; // Import BottomBar component
 import StickyCTA from "./components/StickyCTA"; // Import StickyCTA component
 import "./App.css"; // Import styles
@@ -16,15 +17,24 @@ function App() {
 
       {/* Content sections with corresponding component IDs for scrolling */}
       <main id="main-content">
-        <HeroVideo id="hero-video" /> {/* Hero video section */}
-        <Services id="services" /> {/* Services section */}
-        <Testimonials id="testimonials" /> {/* Testimonials section */}
+        <section id="hero-video">
+          <HeroVideo /> {/* Hero video section */}
+        </section>
+        <section id="services">
+          <Services /> {/* Services section */}
+        </section>
+        <section id="testimonials">
+          <Testimonials /> {/* Testimonials section */}
+        </section>
+        <section id="contact">
+          <ContactForm /> {/* Contact section */}
+        </section>
       </main>
 
       {/* Footer, BottomBar, and StickyCTA */}
       <Footer />
-      <BottomBar />  {/* Bottom Bar for mobile */}
-      <StickyCTA />  {/* Sticky Call-to-Action */}
+      <BottomBar /> {/* Bottom Bar for mobile */}
+      <StickyCTA /> {/* Sticky Call-to-Action */}
     </div>
   );
 }

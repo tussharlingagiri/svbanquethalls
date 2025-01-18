@@ -5,19 +5,24 @@ const ContactForm = () => (
   <section className="contact-form" id="contact">
     <h2>Contact Us</h2>
     <form>
-      <label htmlFor="name">Name</label>
-      <input type="text" id="name" name="name" required />
+      <div className="form-group">
+        <label htmlFor="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+      </div>
 
-      <label htmlFor="email">Email</label>
-      <input type="email" id="email" name="email" required />
+      <div className="form-group">
+        <label htmlFor="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      </div>
 
-      <label htmlFor="message">Message</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
+      <div className="form-group">
+        <label htmlFor="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Write your message" required></textarea>
+      </div>
 
-      <button type="submit">Send Message</button>
+      <button type="submit" className="submit-button">Send Message</button>
     </form>
   </section>
 );
 
 export default ContactForm;
-

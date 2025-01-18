@@ -1,49 +1,93 @@
-/* src/components/ContactForm.css */
+/* General Styles */
 .contact-form {
-    padding: 50px 20px;
-    text-align: center;
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f8f9fa; /* Light gray background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+/* Heading */
+.contact-form h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Form Styles */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form Groups */
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.contact-form label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* Inputs and Textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Button */
+.contact-form .submit-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-form .submit-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 30px 15px;
   }
-  
+
   .contact-form h2 {
-    margin-bottom: 20px;
+    font-size: 1.8rem;
   }
-  
-  .contact-form form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .contact-form label {
-    font-size: 1rem;
-    text-align: left;
-  }
-  
+
   .contact-form input,
   .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-size: 0.9rem;
   }
-  
-  .contact-form button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .contact-form button:hover {
-    background-color: #0056b3;
-  }
-  
 
-
-  
+  .contact-form .submit-button {
+    font-size: 1rem;
+  }
+}
