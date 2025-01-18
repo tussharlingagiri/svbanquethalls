@@ -320,7 +320,7 @@ nav ul li a:focus {
 
 
   .hamburger:hover {
-    background-color: #FFB200; /* Darker gold background on hover */
+    background-color: black; /* Darker gold background on hover */
   }
 }
 
