@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll"; // Import Link from react-scroll
 import { FaFacebook, FaInstagram, FaLinkedin, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa"; // Import all icons
-import "./Header.css";
+import "./header1.css";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);

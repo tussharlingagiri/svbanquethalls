@@ -63,17 +63,16 @@
 
 /* Navigation */
 
-
-
 nav ul {
-  display: none;
-  flex-direction: column;
-  background-color: #000;
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  padding: 15px;
-  border-radius: 8px;
+  display: flex; /* Always visible on desktop */
+  flex-direction: row; /* Horizontal layout */
+  background-color: #000; /* Black background */
+  padding: 15px; /* Padding around menu */
+  gap: 20px; /* Space between items */
+  position: static; /* Default positioning */
+  opacity: 1; /* Fully visible */
+  visibility: visible; /* Ensure visibility */
+  transform: none; /* No transformation */
 }
 
 nav ul.active {
@@ -279,7 +278,28 @@ nav ul li a:focus {
     width: auto; /* Maintain aspect ratio */
     height: 60px; /* Adjusted height for mobile */
   }
+  nav ul {
+    display: flex; /* Keep flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    position: absolute; /* Position relative to header */
+    top: 60px; /* Offset below header */
+    right: 20px; /* Align to the right */
+    background-color: #FFD700; /* Gold background */
+    padding: 15px; /* Padding inside menu */
+    border-radius: 8px; /* Rounded corners */
+    z-index: 1000; /* Ensure visibility above other elements */
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Initially hidden */
+    transform: translateY(-10px); /* Shifted up slightly */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Smooth animations */
+  }
 
+  /* Active State (Menu Visible) */
+  nav ul.active {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Ensure visibility */
+    transform: translateY(0); /* Reset position */
+  }
 
 
   .hamburger {
@@ -292,6 +312,8 @@ nav ul li a:focus {
     padding: 8px; /* Add padding for better alignment */
     border-radius: 5px; /* Slightly rounded corners */
     transition: color 0.3s ease;
+    z-index: 1100; /* Ensure it's above other elements */
+
   }
   
   
