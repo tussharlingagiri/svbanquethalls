@@ -1,4 +1,3 @@
-/* General Styles */
 .contact-form {
   padding: 50px 20px;
   text-align: center;
@@ -7,87 +6,79 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
   max-width: 700px;
+  position: relative; /* Ensure the section is properly positioned */
 }
 
-/* Heading */
+/* Add extra bottom padding to avoid overlap with sticky elements */
+.contact-form {
+  padding-bottom: 80px; /* Adjust this value as needed to clear the sticky CTA */
+}
+
 .contact-form h2 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-size: 2rem;
   color: #333;
 }
 
-/* Form Styles */
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Form Groups */
-.contact-form .form-group {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
-.contact-form label {
+.contact-form p {
   font-size: 1rem;
-  font-weight: bold;
   color: #555;
-  margin-bottom: 8px;
+  margin: 10px 0;
 }
 
-/* Inputs and Textarea */
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px 15px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  transition: border-color 0.3s;
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
-}
-
-/* Button */
-.contact-form .submit-button {
-  background-color: #007bff;
-  color: white;
+.cta-button {
+  display: inline-block;
+  text-decoration: none;
   padding: 12px 20px;
   font-size: 1.2rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
   transition: background-color 0.3s, transform 0.2s;
 }
 
-.contact-form .submit-button:hover {
-  background-color: #0056b3;
+.call-now {
+  background-color: #28a745; /* Green for call */
+}
+
+.whatsapp {
+  background-color: #25d366; /* WhatsApp green */
+}
+
+.cta-button:hover {
+  opacity: 0.9;
   transform: translateY(-2px);
+}
+
+.email-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.email-link:hover {
+  text-decoration: underline;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .contact-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cta-button {
+    width: 100%; /* Full width for buttons on mobile */
+  }
+
+  /* Add even more padding for smaller screens to avoid overlap */
   .contact-form {
-    padding: 30px 15px;
-  }
-
-  .contact-form h2 {
-    font-size: 1.8rem;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 0.9rem;
-  }
-
-  .contact-form .submit-button {
-    font-size: 1rem;
+    padding-bottom: 120px; /* Adjust for the height of the sticky bar */
   }
 }
