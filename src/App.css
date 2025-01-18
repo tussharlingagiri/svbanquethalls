@@ -37,3 +37,14 @@
   }
 }
 
+
+/* App.css */
+
+/* Global Background for the Entire Page */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to bottom, #ffffff, #fff9e6); /* Subtle gold undertone */
+  color: #333; /* Neutral text color */
+}
