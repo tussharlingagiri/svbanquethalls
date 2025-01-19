@@ -78,7 +78,7 @@
   color: #555;
   margin: 15px 0;
   font-family: 'Roboto', sans-serif;
-  text-align: justify; /* Clean alignment */
+  text-align: left; /* Clean alignment */
 }
 
 /* Verified Source */
