@@ -21,11 +21,11 @@ const BottomBar = () => {
   return (
     <>
       <div className="bottom-bar">
-        <a href="tel:+1234567890" className="cta-button phone-button">
+        <a href="tel:+916305333751" className="cta-button phone-button">
           <FaPhoneAlt size={18} />
           <span>Call Now</span>
         </a>
-        <a href="https://wa.me/1234567890" className="cta-button whatsapp-button">
+        <a href="https://wa.me/916305333751" className="cta-button whatsapp-button">
           <FaWhatsapp size={18} />
           <span>WhatsApp Now</span>
         </a>

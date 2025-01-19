@@ -23,8 +23,8 @@ const ContactForm = () => (
     </div>
     <p>
       Prefer email? Send us a message at{" "}
-      <a href="mailto:info@svbanquethalls.com" className="email-link">
-        info@svbanquethalls.com
+      <a href="mailto:svfunctionhalls@gmail.com" className="email-link">
+      svfunctionhalls@gmail.com
       </a>
     </p>
   </section>
