@@ -107,7 +107,8 @@ const Header = () => {
             <a href="tel:+916305333751" className="cta-button call-now-btn">
               <FaPhoneAlt /> Call Now
             </a>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=YourDestination" className="cta-button get-directions-btn">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=S%20V%20Banquet%20Halls,%20Mansoorabad,%20Telangana%20500074,%20India"
+ className="cta-button get-directions-btn" target="_blank">
               <FaMapMarkerAlt /> Get Directions
             </a>
           </div>
