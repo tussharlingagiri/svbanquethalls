@@ -40,3 +40,21 @@ function App() {
 }
 
 export default App;
+
+// import React from "react";
+// import Header from "./components/Header";
+// // import Footer from "./components/Footer";
+// // import HeroVideo from "./components/HeroVideo";
+
+// function App() {
+//   return (
+//     <div>
+//       <h1>Hello from App Component!</h1>
+//       <Header /> {/* Test Header first */}
+//       {/* <HeroVideo /> */}
+//       {/* <Footer /> */}
+//     </div>
+//   );
+// }
+
+// export default App;
