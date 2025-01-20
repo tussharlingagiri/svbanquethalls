@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import './Testimonial.css'; // Import the custom styles
 
 const Testimonials = () => {
