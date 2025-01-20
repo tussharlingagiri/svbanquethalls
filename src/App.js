@@ -58,3 +58,23 @@ export default App;
 // }
 
 // export default App;
+
+
+// Step 1: mimim to test 
+// import React from "react";
+
+// function App() {
+//   return <h1>Hello from React!</h1>;
+// }
+
+// export default App;
+
+// step 2: Minimal test
+// import React from "react";
+
+// function App() {
+//   return <h1>Hello from App Component!</h1>;
+// }
+
+// export default App;
+
