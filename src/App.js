@@ -1,80 +1,87 @@
-import React from "react";
-import Header from "./components/Header"; // Import Header component
-import Footer from "./components/Footer"; // Import Footer component
-import HeroVideo from "./components/HeroVideo"; // Import HeroVideo component
-import Services from "./components/Services"; // Import Services component
-import Testimonials from "./components/Testimonials"; // Import Testimonials component
-import ContactForm from "./components/ContactForm"; // Import ContactForm component
-import BottomBar from "./components/BottomBar"; // Import BottomBar component
-import StickyCTA from "./components/StickyCTA"; // Import StickyCTA component
-import "./App.css"; // Import styles
+import React, { useState, useEffect } from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import HeroVideo from "./components/HeroVideo";
+import Services from "./components/Services";
+import Testimonials from "./components/Testimonials";
+import ContactForm from "./components/ContactForm";
+import BottomBar from "./components/BottomBar";
+import StickyCTA from "./components/StickyCTA";
+import "./App.css";
 
 function App() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [showLoading, setShowLoading] = useState(true);
+
+  // Scroll Progress Bar
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Loading Screen
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="App">
+      {/* Loading Screen */}
+      {showLoading && (
+        <div className="loading-screen">
+          <div className="loading-content">
+            <div className="loading-spinner"></div>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "2rem" }}>
+              SV Banquet Halls
+            </h2>
+            <p style={{ fontFamily: "'Noto Sans Telugu', sans-serif", marginTop: "10px" }}>
+              మీ ప్రత్యేక క్షణాలకు | Your Special Moments
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Scroll Progress Bar */}
+      <div 
+        className="scroll-progress" 
+        style={{ transform: `scaleX(${scrollProgress / 100})` }}
+      ></div>
+
       {/* Header component */}
       <Header />
 
       {/* Content sections with corresponding component IDs for scrolling */}
       <main id="main-content">
         <section id="hero-video">
-          <HeroVideo /> {/* Hero video section */}
+          <HeroVideo />
         </section>
         <section id="services">
-          <Services /> {/* Services section */}
+          <Services />
         </section>
         <section id="testimonials">
-          <Testimonials /> {/* Testimonials section */}
+          <Testimonials />
         </section>
         <section id="contact">
-          <ContactForm /> {/* Contact section */}
+          <ContactForm />
         </section>
       </main>
 
       {/* Footer, BottomBar, and StickyCTA */}
       <Footer />
-      <BottomBar /> {/* Bottom Bar for mobile */}
-      <StickyCTA /> {/* Sticky Call-to-Action */}
+      <BottomBar />
+      <StickyCTA />
     </div>
   );
 }
 
 export default App;
-
-// import React from "react";
-// import Header from "./components/Header";
-// // import Footer from "./components/Footer";
-// // import HeroVideo from "./components/HeroVideo";
-
-// function App() {
-//   return (
-//     <div>
-//       <h1>Hello from App Component!</h1>
-//       <Header /> {/* Test Header first */}
-//       {/* <HeroVideo /> */}
-//       {/* <Footer /> */}
-//     </div>
-//   );
-// }
-
-// export default App;
-
-
-// Step 1: mimim to test 
-// import React from "react";
-
-// function App() {
-//   return <h1>Hello from React!</h1>;
-// }
-
-// export default App;
-
-// step 2: Minimal test
-// import React from "react";
-
-// function App() {
-//   return <h1>Hello from App Component!</h1>;
-// }
-
-// export default App;
-
